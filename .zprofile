@@ -16,4 +16,9 @@ else
 	vhost="$sock"
 fi
 vhost=`echo "$vhost" | cut -d . -f 1`
+RECHNER=$vhost
+if [ -f /etc/oraprofile ]
+then
+    . /etc/oraprofile
+fi
 
