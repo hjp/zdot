@@ -53,3 +53,5 @@ dup(){
 cls()	{ clear; true }
 
 source ~/.znewterm
+
+TMOUT=3600
