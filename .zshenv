@@ -206,7 +206,7 @@ case "$FQDN" in
    enkur.wsr.ac.at)
 	export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/usr/local/mnemonic/lib:/usr/local/mnemonic/lib/msg:/usr/local/lib
 	;;
-   melange.wsr.ac.at|spirit.luga.at|chthon.h.hjp.at|posbi.wsr.ac.at|teal.h.hjp.at|wsrgeh.wsr.ac.at|braveheart.wsr.ac.at|dialog.wsr.ac.at)
+   melange.wsr.ac.at|spirit.luga.at|chthon.h.hjp.at|posbi.wsr.ac.at|wsrgeh.wsr.ac.at|braveheart.wsr.ac.at|dialog.wsr.ac.at)
 	export LD_LIBRARY_PATH=/usr/local/lib
 	;;
    posbi.wsr.ac.at)
@@ -214,11 +214,8 @@ case "$FQDN" in
 	;;
    *.wsr.ac.at)
 	;;
-   trout.adcon.at)
+   trout.adcon.at|teal.h.hjp.at)
 	export LD_LIBRARY_PATH=$HOME/wrk/a840sw/ia32/lib:/usr/local/lib
-	;;
-   teal.h.hjp.at)
-	export LD_LIBRARY_PATH=$HOME/wrk/a840sw/ia32/lib
 	;;
 esac
 
