@@ -156,7 +156,7 @@ case "$FQDN" in
    enkur.wsr.ac.at)
 	export LD_LIBRARY_PATH=$ORACLE_HOME/lib
 	;;
-   melange.wsr.ac.at|spirit.luga.or.at)
+   melange.wsr.ac.at|spirit.luga.or.at|chthon.wsr.ac.at)
 	export LD_LIBRARY_PATH=/usr/local/lib
 	;;
    *.wsr.ac.at)
