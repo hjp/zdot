@@ -202,7 +202,7 @@ esac
 
 
 case "$FQDN" in
-   wsrgeh.wsr.ac.at)
+   wsrgeh.wsr.ac.at|coney.wsr.ac.at)
 	export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/usr/local/lib
 	;;
    enkur.wsr.ac.at)
