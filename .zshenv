@@ -42,7 +42,6 @@ PRIVATE_PATH=$HOME/bin/scripts:$HOME/bin:$HOME/public_html/bin:$HOME/pgreplica/b
 ETC_PATH=/usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin:/var/qmail/bin:/usr/local/ssl/bin:/usr/adm/acct/wsr/bin:/opt/tusc/bin:/usr/local/pgsql/bin
 LOCAL_PATH=/usr/local/arm-linux/bin:/usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11:/usr/local/povray3/bin:/usr/local/majordomo/bin:/usr/lib/majordomo/bin:/usr/local/vnc_x86_linux_2.0:/usr/local/rrdtool-1.0.35/bin:/usr/local/OpenOffice.org1.0.2/program
 BIN_PATH=/usr/bin/X11:/bin:/usr/bin:/usr/ccs/bin:/usr/openwin/bin:/opt/kde/bin:/opt/perl5/bin:/opt/Office51/bin:/usr/games:/usr/contrib/bin
-JAVA_PATH=/usr/local/j2sdk1.4.1/bin:/usr/java/j2sdk1.4.0/bin:/usr/java/jdk1.3.1_02/bin:/usr/java/jre1.3.1_02/bin:/usr/local/jdk1.2.2/bin:/usr/java1.2/bin:/usr/local/jdk1.2/bin:/usr/local/jdk117_v3/bin:/usr/local/jdk1.1.6/bin:/usr/local/java/bin
 ORACLE_PATH=$ORACLE_HOME/bin
 
 if [ -r /etc/PATH ]
@@ -50,7 +49,7 @@ then
 	PATH=`cat /etc/PATH`:$PATH
 fi
 
-ALL_PATH=$PRIVATE_PATH:$LOCAL_PATH:$ETC_PATH:$JAVA_PATH:$BIN_PATH:$ORACLE_PATH:$PATH
+ALL_PATH=$PRIVATE_PATH:$LOCAL_PATH:$ETC_PATH:$BIN_PATH:$ORACLE_PATH:$PATH
 NEW_PATH=""
 
 for i in ${(s/:/)ALL_PATH}
@@ -237,28 +236,6 @@ esac
 
 
 export TABLE_DELIMITER='|'
-
-ALL_PATH=.:/usr/local/java/classes:$ORACLE_HOME/jdbc/lib/classes111.zip:/usr/java1.2/lib/tools.jar:/usr/local/jswdk-1.0.1/lib/servlet.jar:/usr/local/java/lib/Tidy.jar:/usr/local/roxen/2.1/roxen/server/java/classes/servlet.jar
-NEW_PATH=""
-
-for i in ${(s/:/)ALL_PATH}
-do
-	if test -r "$i"
-	then
-		case "$NEW_PATH" in
-		$i:*|*:$i|*:$i:*) ;;
-		*)
-			if test -z "$NEW_PATH"
-			then
-				NEW_PATH=$i
-			else
-				NEW_PATH=$NEW_PATH:$i
-			fi
-		esac
-	fi
-done
-
-export CLASSPATH=$NEW_PATH
 
 if [ -d /usr/local/pgsql/data/ ]
 then

@@ -1,5 +1,5 @@
 #
-# $Id: .zprofile,v 1.10 2003-09-10 20:58:13 hjp Exp $
+# $Id: .zprofile,v 1.11 2004-04-23 20:33:46 hjp Exp $
 #
 # this is sourced for login shells after .zshenv but before .zshrc
 #
@@ -30,3 +30,5 @@ fi
 
 unset MAILCHECK
 export EDITOR=vi
+
+. ~/.zjava

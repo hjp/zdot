@@ -2,6 +2,7 @@ include GNUmakerules
 include GNUmakevars
 
 ALLSRC = \
+	.zjava \
 	.zlogin \
 	.zlogout \
 	.znewterm \
