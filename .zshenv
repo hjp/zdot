@@ -32,7 +32,7 @@ export LPDEST=wsrplj51
 
 # set PATH to direcories *I* want.
 PRIVATE_PATH=/usr/local/alpha/mt/bin:$HOME/bin/scripts:$HOME/bin
-ETC_PATH=/usr/etc:/etc:/usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin:/usr/local/qmail/bin:/usr/local/ssl/bin
+ETC_PATH=/usr/etc:/etc:/usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin:/usr/local/qmail/bin:/usr/local/ssl/bin:/usr/adm/acct/wsr/bin
 LOCAL_PATH=/usr/local/etc:/usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11:/usr/local/java/bin:/usr/local/povray3/bin
 BIN_PATH=/usr/softbench/bin:/usr/vue/bin:/usr/bin/X11:/bin:/usr/bin:/usr/ccs/bin:/usr/openwin/bin
 
@@ -104,6 +104,7 @@ esac
 case "$FQDN" in
    calypso.wsr.ac.at)
 	export CVSROOT=/usr/local/src/master
+	export CVS_RSH=/usr/local/bin/ssh
 	;;
    *.wsr.ac.at)
 	export CVSROOT=cvs.wsr.ac.at:/usr/local/src/master
