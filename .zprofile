@@ -1,15 +1,9 @@
 #
-# $Id: .zprofile,v 1.13 2005-02-22 11:23:55 hjp Exp $
+# $Id: .zprofile,v 1.14 2005-02-22 18:22:34 hjp Exp $
 #
 # this is sourced for login shells after .zshenv but before .zshrc
 #
 umask 022
-echo TERM=$TERM
-eval `echo TERM=$TERM`
-if [ -f "$EXEC" ] 
-then
-	source $EXEC
-fi
 if [ -f /usr/local/bin/findsock ]
 then
 	sock=`findsock $$`
