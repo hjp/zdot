@@ -38,6 +38,10 @@ export LPDEST=wsrplj51
 PRIVATE_PATH=/usr/local/alpha/mt/bin:$HOME/bin/scripts:$HOME/bin
 ETC_PATH=/usr/local/etc:/usr/etc:/etc:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/samba/bin
 BIN_PATH=/usr/local/bin:/usr/softbench/bin:/usr/vue/bin:/usr/bin/X11:/bin:/usr/bin:/usr/local/bin/X11
+if [ -r /etc/PATH ]
+then
+	PATH=`cat /etc/PATH`:$PATH
+fi
 
 ALL_PATH=$PRIVATE_PATH:$ETC_PATH:$BIN_PATH:$PATH
 NEW_PATH=""
