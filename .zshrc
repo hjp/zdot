@@ -59,7 +59,7 @@ source ~/.znewterm
 # auto-logout after some time.
 case `tty` in
 /dev/pts/*)
-    TMOUT=0
+    TMOUT=14400
     ;;
 *)
     TMOUT=3600
