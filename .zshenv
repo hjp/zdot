@@ -154,7 +154,7 @@ esac
 
 case "$FQDN" in
    *.wsr.ac.at)
-	export LPDEST=wsrplj51
+	export LPDEST=wsrpl1
 	;;
 esac
 

@@ -34,7 +34,7 @@ pd(){
 	else
 		pushd "$@"
 	fi
-	namedir `basename $PWD | tr -cd 'A-Za-z0-9_' | sed -e 's/^[0-9]/_&/'`
+	namedir $(echo $(basename $PWD | tr -cd 'A-Za-z0-9_') | sed -e 's/^[0-9]/_&/')
 }
 
 setenv(){
