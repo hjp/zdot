@@ -26,7 +26,6 @@ HISTFILE=~/.zhistory
 REPORTTIME=1
 TMOUT=0
 export PGPPATH=~/.pgp
-export LESSCHARSET=latin1
 export PARINIT=q1
 export PARBODY=_A_a
 
@@ -113,10 +112,22 @@ HP-UX*10.*)
 	;;
 Linux*)
 	export LC_COLLATE=POSIX
-	export LC_TIME=de_AT
+	# export LC_TIME=de_AT # don't remember what that was for
 	;;
 esac
-export NLS_LANG=american_america.WE8ISO8859P1
+
+case "$LANG" in
+*.iso88591)
+	export LESSCHARSET=latin1
+	export NLS_LANG=american_america.WE8ISO8859P1
+	;;
+*.UTF-8)
+	#export LESSCHARSET=latin1
+	export NLS_LANG=american_america.UTF8
+	# export LC_TIME=de_AT.UTF-8
+	;;
+esac
+
 export NLS_DATE_FORMAT='YYYY-MM-DD HH24:MI:SS'
 
 
@@ -210,7 +221,7 @@ case "$FQDN" in
    enkur.wsr.ac.at)
 	export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/usr/local/mnemonic/lib:/usr/local/mnemonic/lib/msg:/usr/local/lib
 	;;
-   melange.wsr.ac.at|spirit.luga.at|chthon.h.hjp.at|posbi.wsr.ac.at|wsrgeh.wsr.ac.at|braveheart.wsr.ac.at|dialog.wsr.ac.at|samkar.wsr.ac.at|yoyo.hjp.at)
+   melange.wsr.ac.at|spirit.luga.at|chthon.h.hjp.at|posbi.wsr.ac.at|wsrgeh.wsr.ac.at|braveheart.wsr.ac.at|dialog.wsr.ac.at|samkar.wsr.ac.at|yoyo.hjp.at|yoyo.wsr.ac.at|localhost.localdomain)
 	export LD_LIBRARY_PATH=/usr/local/lib
 	;;
    posbi.wsr.ac.at)
