@@ -30,9 +30,12 @@ export LESSCHARSET=latin1
 export PARINIT=q1
 export PARBODY=_A_a
 
-if [ -f /etc/oraenv ]
+if [ -f $HOME/etc/oraenv ] 
+then 
+	. $HOME/etc/oraenv
+elif [ -f /etc/oraenv ]
 then
-    . /etc/oraenv
+	. /etc/oraenv
 fi
 
 # set PATH to direcories *I* want.
