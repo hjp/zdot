@@ -46,6 +46,10 @@ harden(){
 	cp -p "$1" .harden.$$ && mv .harden.$$ "$1"
 }
 
+dup(){
+	mv $1 $1.orig && cp -p $1.orig $1
+}
+
 cls()	{ clear; true }
 
 source ~/.znewterm
