@@ -47,4 +47,5 @@ else
 	prompt="%m(%l)%n %~ $SHLVL.%h%# "
 fi
 
+export PROMPT
 znewtermexecuted=true
