@@ -42,7 +42,11 @@ then
 	then
 		export DISPLAY=${REMOTEHOST}:0.0
 	fi
-	#stty erase 
+	# force backspace key to send BS:
+	# warning: This works with real xterm and rxvt
+	# it doesn't work with konsole or gnome-terminal.
+	echo '[?67h'
+	stty erase 
 else
 	prompt="%B%m:%~ %T %h%# %b"
 fi
