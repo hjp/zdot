@@ -11,15 +11,10 @@ alias	lo=logout
 alias	md=mkdir
 alias	pop=popd
 alias	rd=rmdir
-alias	ball='pd /usr/local/projects/ball; source s'
-alias	srcsrv='pd ~/wrk/srcservice/clients/exp'
 alias	fixsz='set noglob; eval `resize`;unset noglob'
 alias	ls='ls	-F'
 alias	ll='ls	-lFh'
 alias	la='ls	-alsF'
-alias	lc='ls	-l *.c'
-alias	ts='tail /usr/spool/mqueue/syslog'
-alias	train='pd ~/wrk/mars/train'
 
 namedir(){
 	eval "$1=~+"
@@ -33,12 +28,16 @@ pd(){
 	else
 		pushd "$@"
 	fi
-	namedir `basename $PWD | tr -cd 'A-Za-z0-9'`
+	namedir `basename $PWD | tr -cd 'A-Za-z0-9_' | sed -e 's/^[0-9]/_&/'`
 }
 
 setenv(){
 	$1=$2
 	export $1
+}
+
+harden(){
+	cp -p "$1" .harden.$$ && mv .harden.$$ "$1"
 }
 
 cls()	{ clear; true }

@@ -2,9 +2,9 @@
 # called both from .zlogin and .zshrc
 
 # default initialization
-if [ -f /usr/local/lib/profile-parts/term ]
+if [ -r /usr/local/lib/profile-parts/term ]
 then
-    . /usr/local/lib/profile-parts/term
+	. /usr/local/lib/profile-parts/term
 fi
 
 # terminal customization
