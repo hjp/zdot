@@ -40,7 +40,7 @@ export LPDEST=wsrplj51
 
 # set PATH to direcories *I* want.
 PRIVATE_PATH=/usr/local/alpha/mt/bin:$HOME/bin/scripts:$HOME/bin
-ETC_PATH=/usr/local/etc:/usr/etc:/etc:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/samba/bin
+ETC_PATH=/usr/local/etc:/usr/etc:/etc:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/samba/bin:/opt/omni/sbin:/opt/omni/lbin
 BIN_PATH=/usr/local/bin:/usr/softbench/bin:/usr/vue/bin:/usr/bin/X11:/bin:/usr/bin:/usr/local/bin/X11
 if [ -r /etc/PATH ]
 then
@@ -50,24 +50,33 @@ fi
 ALL_PATH=$PRIVATE_PATH:$ETC_PATH:$BIN_PATH:$PATH
 NEW_PATH=""
 
+date
 for i in ${(s/:/)ALL_PATH}
 do
 	if test -d "$i"
 	then
-		if echo "$NEW_PATH" | egrep '(^|:)'"$i"'(:|$)' > /dev/null
-		then
-		else
+		case "$NEW_PATH" in
+		$i:*|*:$i|*:$i:*) ;;
+		*)
 			if test -z "$NEW_PATH"
 			then
 				NEW_PATH=$i
 			else
 				NEW_PATH=$NEW_PATH:$i
 			fi
-		fi
+		esac
 	fi
 done
 
 export PATH=$NEW_PATH
+date
+
+if [ -r /etc/MANPATH ]
+then
+	MANPATH=`cat /etc/MANPATH`:$MANPATH
+fi
+
+
 case "`uname -sr`" in
 HP-UX*09.*)
 	export LANG=${LANG:-american.iso88591}
