@@ -38,11 +38,11 @@ then
 fi
 
 # set PATH to direcories *I* want.
-PRIVATE_PATH=/usr/local/alpha/mt/bin:$HOME/bin/scripts:$HOME/bin:$HOME/public_html/bin
+PRIVATE_PATH=$HOME/bin/scripts:$HOME/bin:$HOME/public_html/bin
 ETC_PATH=/usr/etc:/etc:/usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin:/usr/local/qmail/bin:/usr/local/ssl/bin:/usr/adm/acct/wsr/bin
 LOCAL_PATH=/usr/local/etc:/usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11:/usr/local/povray3/bin:/usr/local/majordomo/bin
-BIN_PATH=/usr/softbench/bin:/usr/vue/bin:/usr/bin/X11:/bin:/usr/bin:/usr/ccs/bin:/usr/openwin/bin:/opt/kde/bin:/opt/perl5/bin
-JAVA_PATH=/usr/java1.2/bin:/usr/local/jdk1.2/bin:/usr/local/jdk1.1.6/bin:/usr/local/jdk1.1.1/bin:/usr/local/java/bin
+BIN_PATH=/usr/softbench/bin:/usr/vue/bin:/usr/bin/X11:/usr/bin:/bin:/usr/ccs/bin:/usr/openwin/bin:/opt/kde/bin:/opt/perl5/bin
+JAVA_PATH=/usr/java1.2/bin:/usr/local/jdk1.2/bin:/usr/local/jre118_v1/bin:/usr/local/jdk1.1.6/bin:/usr/local/jdk1.1.1/bin:/usr/local/java/bin
 ORACLE_PATH=$ORACLE_HOME/bin
 
 if [ -r /etc/PATH ]
