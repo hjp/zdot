@@ -91,6 +91,8 @@ HP-UX*10.*)
         export TZ=MEZ-1MESZ
 	;;
 esac
+export NLS_LANG=american_america.WE8ISO8859P1
+
 
 if [ -x /usr/bin/less ]
 then
