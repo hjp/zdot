@@ -23,7 +23,6 @@ fpath=(~/bin/func)
 SAVEHIST=100
 HISTSIZE=$SAVEHIST
 HISTFILE=~/.zhistory
-REPORTTIME=1
 export PGPPATH=~/.pgp
 export PARINIT=q1
 export PARBODY=_A_a
