@@ -35,6 +35,7 @@ then
 	else
 	    export REMOTEHOST=`
 		    who am i |
+		    grep '(.*)' |
 		    sed -e 's/.*(\(.*\)).*/\1/'`
 	fi
 	if [[ -z "$DISPLAY" ]]
