@@ -30,7 +30,7 @@ then
 		    sed -e 's/.*(\(.*\)).*/\1/'`
 	else
 	    export REMOTEHOST=`
-		    who -muR |
+		    /bin/who -muR |
 		    tr -s ' ' '	' |
 		    cut -f 8 | cut -d : -f 1`
 	fi
