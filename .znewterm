@@ -46,6 +46,11 @@ then
 	then
 		stty erase 
 	fi
+	# These are erroneously set on RH 6.0
+	# or maybe not - seems that they were just eroneusly exported 
+	# elsewhere.
+	#unset LINES
+	#unset COLUMNS
 else
 	prompt="%m(%l)%n %~ $SHLVL.%h%# "
 fi

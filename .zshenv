@@ -4,6 +4,7 @@ setopt CHASELINKS
 setopt AUTO_CD
 setopt AUTO_PUSHD
 setopt EXTENDED_GLOB
+setopt EXTENDED_HISTORY
 setopt LIST_TYPES
 unsetopt MARKDIRS
 unsetopt MENU_COMPLETE
@@ -158,7 +159,7 @@ esac
 
 case "$FQDN" in
    enkur.wsr.ac.at)
-	export LD_LIBRARY_PATH=$ORACLE_HOME/lib
+	export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/usr/local/mnemonic/lib
 	;;
    melange.wsr.ac.at|spirit.luga.or.at|chthon.wsr.ac.at|posbi.wsr.ac.at)
 	export LD_LIBRARY_PATH=/usr/local/lib
@@ -167,4 +168,4 @@ case "$FQDN" in
 	;;
 esac
 
-export CLASSPATH=.:/usr/local/java/classes
+export CLASSPATH=.:/usr/local/java/classes:/usr/local/oracle/classes111.zip
