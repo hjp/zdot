@@ -114,7 +114,7 @@ case "$HOST" in
 esac
 
 case "$FQDN" in
-   calypso.wsr.ac.at)
+   pandora.wsr.ac.at)
 	export CVSROOT=/usr/local/src/master
 	;;
    *.luga.at|*.luga.or.at)
