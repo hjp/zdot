@@ -68,6 +68,12 @@ then
     # I do it ONLY on HP-UX
     export TZ=MEZ-1MESZ
 fi
-export PAGER=less
+if [ -x /usr/bin/less ]
+then
+	export PAGER=/usr/bin/less
+elif [ -x /usr/local/bin/less ]
+then
+	export PAGER=/usr/local/bin/less
+elif
 export XAUTHORITY=$HOME/.Xauthority
 export CVSROOT=/nfs/wsrdb/usr/local/src/master
