@@ -1,4 +1,5 @@
 include GNUmakerules
+include GNUmakevars
 
 ALLSRC = \
 	.zlogin \

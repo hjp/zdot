@@ -15,13 +15,6 @@ setopt PUSHD_TO_HOME
 setopt RMSTARSILENT
 setopt NO_PROMPT_CR
 
-# fix problem with nfs
-# Does this still work? I have deleted it at home.
-# in any case I probably don't need it.
-pushd ~
-HOME=`pwd`
-popd
-
 setopt PUSHD_IGNORE_DUPS
 
 fpath=(~/bin/func)
@@ -39,14 +32,15 @@ export LPDEST=wsrplj51
 
 # set PATH to direcories *I* want.
 PRIVATE_PATH=/usr/local/alpha/mt/bin:$HOME/bin/scripts:$HOME/bin
-ETC_PATH=/usr/local/etc:/usr/etc:/etc:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/samba/bin:/opt/omni/sbin:/opt/omni/lbin
-BIN_PATH=/usr/local/bin:/usr/softbench/bin:/usr/vue/bin:/usr/bin/X11:/bin:/usr/bin:/usr/local/bin/X11
+LOCAL_PATH=/usr/local/etc:/usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11
+ETC_PATH=/usr/etc:/etc:/usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin
+BIN_PATH=/usr/softbench/bin:/usr/vue/bin:/usr/bin/X11:/bin:/usr/bin
 if [ -r /etc/PATH ]
 then
 	PATH=`cat /etc/PATH`:$PATH
 fi
 
-ALL_PATH=$PRIVATE_PATH:$ETC_PATH:$BIN_PATH:$PATH
+ALL_PATH=$PRIVATE_PATH:$LOCAL_PATH:$ETC_PATH:$BIN_PATH:$PATH
 NEW_PATH=""
 
 for i in ${(s/:/)ALL_PATH}
@@ -97,22 +91,29 @@ then
 fi
 export XAUTHORITY=$HOME/.Xauthority
 
-case "$HOST" in
+case "$HOST" in 
+   *.*)
+	export FQDN=$HOST
+	;;
+   *)
+	export FQDN=`fqdn`
+	;;
+esac
+
+case "$FQDN" in
    wsrk.wsr.ac.at)
 	export CVSROOT=/u/cvs
 	;;
-   SiKitu.wsr.ac.at)
-	export CVSROOT=wsrx.wsr.ac.at:/nfs/wsrk/u/cvs
-	;;
    *.wsr.ac.at)
-	export CVSROOT=/nfs/wsrk/u/cvs
+	export CVSROOT=wsrk.wsr.ac.at:/u/cvs
+	export CVS_RSH=/usr/local/bin/ssh
 	;;
 esac
 if test "`uname`" = Linux
 then
     limit coredumpsize 64M
 fi
-case "$HOST" in
+case "$FQDN" in
    SiKitu.wsr.ac.at)
 	export MAIL=$HOME/Maildir
 	;;
