@@ -43,4 +43,4 @@ setenv(){
 
 cls()	{ clear; true }
 
-source .znewterm
+source ~/.znewterm

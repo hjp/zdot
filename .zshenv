@@ -69,12 +69,14 @@ do
 done
 
 export PATH=$NEW_PATH
-date
 
 if [ -r /etc/MANPATH ]
 then
 	MANPATH=`cat /etc/MANPATH`:$MANPATH
+else
+	MANPATH=/usr/local/qmail/man:/usr/man:/usr/local/man:/usr/X11R6/man
 fi
+export MANPATH
 
 
 case "`uname -sr`" in
@@ -84,14 +86,10 @@ HP-UX*09.*)
 	;;
 HP-UX*10.*)
 	export LANG=${LANG:-C.iso88591}
+        export TZ=MEZ-1MESZ
 	;;
 esac
-if test "`uname`" = HP-UX
-then
-    # need to set that explicitely on HP-UX. MESZ isn't standard, so
-    # I do it ONLY on HP-UX
-    export TZ=MEZ-1MESZ
-fi
+
 if [ -x /usr/bin/less ]
 then
 	export PAGER="/usr/bin/less -i"
@@ -123,6 +121,5 @@ case "$HOST" in
    *.wsr.ac.at)
 	;;
 esac
-MANPATH=/usr/local/qmail/man:/usr/man:/usr/local/man:/usr/X11R6/man
-export MANPATH
 date
+
