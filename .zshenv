@@ -216,3 +216,8 @@ do
 done
 
 export CLASSPATH=$NEW_PATH
+
+if [ -d /usr/local/pgsql/data/ ]
+then
+	export PGDATA=/usr/local/pgsql/data/
+fi
