@@ -60,8 +60,15 @@ do
 done
 
 export PATH=$NEW_PATH
-export LANG=american.iso88591
-export LC_COLLATE=american.iso88591@nofold
+case `uname -sr` in
+HP-UX*09.*)
+	export LANG=${LANG:-american.iso88591}
+	export LC_COLLATE=${LC_COLLATE:-american.iso88591@nofold}
+	;;
+HP-UX*10.*)
+	export LANG=${LANG:-C.iso88591}
+	;;
+esac
 if test "`uname`" = HP-UX
 then
     # need to set that explicitely on HP-UX. MESZ isn't standard, so
