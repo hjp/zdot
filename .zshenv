@@ -141,3 +141,5 @@ case "$FQDN" in
    *.wsr.ac.at)
 	;;
 esac
+
+export CLASSPATH=/usr/local/java/classes
