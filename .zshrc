@@ -19,7 +19,27 @@ alias	la='ls	-alsF'
 alias	lc='ls	-l *.c'
 alias	ts='tail /usr/spool/mqueue/syslog'
 alias	train='pd ~/wrk/mars/train'
-typeset -fu namedir xvi pd setenv
+
+namedir(){
+	$1=~+
+	: ~$1
+}
+
+pd(){
+	if [[ $# = 0 ]]
+	then 
+		pushd +1
+	else
+		pushd "$@"
+	fi
+	namedir `basename $PWD | tr -cd 'A-Za-z0-9'`
+}
+
+setenv(){
+	$1=$2
+	export $1
+}
+
 cls()	{ clear; true }
 
 if [[ "$SHLVL" = 1 ]] 
