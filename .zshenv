@@ -1,4 +1,3 @@
-date
 unsetopt BGNICE
 setopt CHASELINKS
 setopt AUTO_CD
@@ -50,7 +49,6 @@ fi
 ALL_PATH=$PRIVATE_PATH:$ETC_PATH:$BIN_PATH:$PATH
 NEW_PATH=""
 
-date
 for i in ${(s/:/)ALL_PATH}
 do
 	if test -d "$i"
@@ -121,5 +119,3 @@ case "$HOST" in
    *.wsr.ac.at)
 	;;
 esac
-date
-
