@@ -42,9 +42,6 @@ then
 	then
 		stty erase 
 	fi
-
-	# Do we need this at all? On linux this messes things up.
-	#eval `resize`
 else
 	prompt="%m(%l)%n %~ $SHLVL.%h%# "
 fi

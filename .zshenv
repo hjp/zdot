@@ -37,8 +37,9 @@ PRIVATE_PATH=/usr/local/alpha/mt/bin:$HOME/bin/scripts:$HOME/bin
 ETC_PATH=/usr/etc:/etc:/usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin:/usr/local/qmail/bin:/usr/local/ssl/bin:/usr/adm/acct/wsr/bin
 LOCAL_PATH=/usr/local/etc:/usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11:/usr/local/povray3/bin
 BIN_PATH=/usr/softbench/bin:/usr/vue/bin:/usr/bin/X11:/bin:/usr/bin:/usr/ccs/bin:/usr/openwin/bin:/opt/kde/bin
-JAVA_PATH=/usr/local/jdk1.1.6/bin:/usr/local/java/bin
+JAVA_PATH=/usr/local/jdk1.1.6/bin:/usr/local/jdk1.1.1/bin:/usr/local/java/bin
 ORACLE_PATH=$ORACLE_HOME/bin
+
 if [ -r /etc/PATH ]
 then
 	PATH=`cat /etc/PATH`:$PATH
@@ -136,6 +137,16 @@ case "$FQDN" in
 	;;
 esac
 
+case "$FQDN" in
+   SiKitu.wsr.ac.at)
+	export http_proxy=http://SiKitu.wsr.ac.at:3128/
+	;;
+   *.wsr.ac.at)
+	export http_proxy=http://squid.wsr.ac.at:3128/
+	;;
+esac
+
+
 
 case "$FQDN" in
    enkur.wsr.ac.at)
@@ -148,4 +159,4 @@ case "$FQDN" in
 	;;
 esac
 
-export CLASSPATH=/usr/local/java/classes
+export CLASSPATH=.:/usr/local/java/classes
