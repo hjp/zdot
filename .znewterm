@@ -42,15 +42,7 @@ then
 	then
 		export DISPLAY=${REMOTEHOST}:0.0
 	fi
-	if expr "$REMOTEHOST" : ".*\.vmars\.tuwien\.ac\.at" > /dev/null
-	then
-		stty erase 
-	fi
-	# These are erroneously set on RH 6.0
-	# or maybe not - seems that they were just eroneusly exported 
-	# elsewhere.
-	#unset LINES
-	#unset COLUMNS
+	#stty erase 
 else
 	prompt="%B%m:%~ %T %h%# %b"
 fi
