@@ -128,7 +128,7 @@ for i in /usr/local/bin/ssh /usr/bin/ssh
 do
     if [ -x $i ]
     then
-	export CVS_RSH=/usr/local/bin/ssh
+	export CVS_RSH=$i
     fi
 done
 
