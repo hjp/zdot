@@ -77,7 +77,26 @@ if [ -r /etc/MANPATH ]
 then
 	MANPATH=`cat /etc/MANPATH`:$MANPATH
 else
-	MANPATH=/usr/local/qmail/man:/usr/man:/usr/local/man:/usr/X11R6/man
+	ALL_PATH=/usr/local/qmail/man:/usr/man:/usr/local/man:/usr/X11R6/man:/usr/share/man:/usr/local/pgsql/man
+	NEW_PATH=""
+
+	for i in ${(s/:/)ALL_PATH}
+	do
+		if test -d "$i"
+		then
+			case "$NEW_PATH" in
+			$i:*|*:$i|*:$i:*) ;;
+			*)
+				if test -z "$NEW_PATH"
+				then
+					NEW_PATH=$i
+				else
+					NEW_PATH=$NEW_PATH:$i
+				fi
+			esac
+		fi
+	done
+	MANPATH=$NEW_PATH
 fi
 export MANPATH
 
