@@ -15,6 +15,7 @@ alias	fixsz='set noglob; eval `resize`;unset noglob'
 alias	ls='ls	-F'
 alias	ll='ls	-lFh'
 alias	la='ls	-alsF'
+alias	cup='cvs -q update -d -P'
 
 namedir(){
 	eval "$1=~+"
