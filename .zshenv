@@ -252,3 +252,10 @@ then
 fi
 
 export MAKEFLAGS="-I $HOME/include"
+if [ -d /usr/local/www ]
+then
+    export HOME_WWW=/usr/local/www
+elif [ -d /home/www ]
+then
+    export HOME_WWW=/home/www
+fi

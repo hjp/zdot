@@ -1,3 +1,8 @@
+#
+# $Id: .zlogin,v 1.9 2003-08-10 17:09:17 hjp Exp $
+#
+# this is sourced for login shells after .zshrc
+#
 mesg y
 if [ "`uname`" = "HP-UX" ]
 then

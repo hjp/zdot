@@ -1,3 +1,8 @@
+#
+# $Id: .zprofile,v 1.9 2003-08-10 17:09:17 hjp Exp $
+#
+# this is sourced for login shells after .zshenv but before .zshrc
+#
 umask 022
 echo TERM=$TERM
 eval `echo TERM=$TERM`
@@ -18,17 +23,10 @@ fi
 vhost=`echo "$vhost" | cut -d . -f 1`
 RECHNER=$vhost
 
-# I don't understand this any more.
-# looks like a nop to me.
-if [ -n "" -a  -z "$SSH_AUTH_SOCK" -a -f "$HOME/.ssh/identity" ] && tty -s
-then
-    eval `ssh-agent`
-    ssh-add
-fi
-   
 if [ -f /etc/oraprofile ]
 then
     . /etc/oraprofile
 fi
 
+unset MAILCHECK
 
