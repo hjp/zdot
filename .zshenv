@@ -32,9 +32,10 @@ export LPDEST=wsrplj51
 
 # set PATH to direcories *I* want.
 PRIVATE_PATH=/usr/local/alpha/mt/bin:$HOME/bin/scripts:$HOME/bin
-LOCAL_PATH=/usr/local/etc:/usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11
+LOCAL_PATH=/usr/local/etc:/usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11:/usr/local/bin/X11:/usr/local/java/bin:/usr/local/povray3/bin
 ETC_PATH=/usr/etc:/etc:/usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin
-BIN_PATH=/usr/softbench/bin:/usr/vue/bin:/usr/bin/X11:/bin:/usr/bin
+BIN_PATH=/usr/softbench/bin:/usr/vue/bin:/usr/bin/X11:/bin:/usr/bin:/usr/ccs/bin
+
 if [ -r /etc/PATH ]
 then
 	PATH=`cat /etc/PATH`:$PATH
@@ -116,6 +117,15 @@ fi
 case "$FQDN" in
    SiKitu.wsr.ac.at)
 	export MAIL=$HOME/Maildir
+	;;
+   *.wsr.ac.at)
+	;;
+esac
+
+
+case "$FQDN" in
+   melange.wsr.ac.at)
+	export LD_LIBRARY_PATH=/usr/local/lib
 	;;
    *.wsr.ac.at)
 	;;
