@@ -1,5 +1,5 @@
 #
-# $Id: .zprofile,v 1.12 2004-09-08 13:22:55 hjp Exp $
+# $Id: .zprofile,v 1.13 2005-02-22 11:23:55 hjp Exp $
 #
 # this is sourced for login shells after .zshenv but before .zshrc
 #
@@ -38,3 +38,7 @@ then
 fi
 
 . ~/.zjava
+
+# Set to non-working default values on SUSE Linux.
+# I don't use that anyway, so I just unset these values:
+unset LESSOPEN LESSCLOSE
