@@ -141,11 +141,11 @@ case "$FQDN" in
 esac
 
 case "$FQDN" in
-   pandora.wsr.ac.at)
+   braveheart.wsr.ac.at)
 	export CVSROOT=/usr/local/src/master
 	;;
    *.luga.at|*.luga.or.at)
-	export CVSROOT=cvs.luga.at:/usr/local/src/master
+	export CVSROOT=cvs.luga.at:/home/cvs
 	;;
    *)
 	export CVSROOT=cvs.wsr.ac.at:/usr/local/src/master
