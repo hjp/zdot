@@ -23,10 +23,17 @@ fi
 if [[ .$TERM. = .xterm. ]]
 then
 	prompt="%{]0;%m(%l)%n %~%}$SHLVL.%h%# "
-	export REMOTEHOST=`
-		who -muR |
-		tr -s ' ' '	' |
-		cut -f 8 | cut -d : -f 1`
+	if test "`uname`" = Linux
+	then
+	    export REMOTEHOST=`
+		    who am i |
+		    sed -e 's/.*(\(.*\)).*/\1/'`
+	else
+	    export REMOTEHOST=`
+		    who -muR |
+		    tr -s ' ' '	' |
+		    cut -f 8 | cut -d : -f 1`
+	fi
 	if [[ -z "$DISPLAY" ]]
 	then
 		export DISPLAY=${REMOTEHOST}:0.0

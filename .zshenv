@@ -62,4 +62,12 @@ done
 export PATH=$NEW_PATH
 export LANG=american.iso88591
 export LC_COLLATE=american.iso88591@nofold
-export TZ=MET-1MESZ
+if test "`uname`" = HP-UX
+then
+    # need to set that explicitely on HP-UX. MESZ isn't standard, so
+    # I do it ONLY on HP-UX
+    export TZ=MET-1MESZ
+fi
+export PAGER=less
+export XAUTHORITY=$HOME/.Xauthority
+export CVSROOT=/nfs/wsrdb/usr/local/src/master
