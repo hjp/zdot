@@ -161,6 +161,9 @@ case "$FQDN" in
    SiKitu.wsr.ac.at)
 	export http_proxy=http://SiKitu.wsr.ac.at:3128/
 	;;
+   *.h.hjp.at)
+	export http_proxy=http://teal.h.hjp.at:3128/
+	;;
    *.wsr.ac.at)
 	export http_proxy=http://squid.wsr.ac.at:3128/
 	;;
