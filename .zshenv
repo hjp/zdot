@@ -41,7 +41,7 @@ fi
 PRIVATE_PATH=$HOME/bin/scripts:$HOME/bin:$HOME/public_html/bin
 ETC_PATH=/usr/etc:/etc:/usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin:/usr/local/qmail/bin:/usr/local/ssl/bin:/usr/adm/acct/wsr/bin:/opt/tusc/bin
 LOCAL_PATH=/usr/local/etc:/usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11:/usr/local/povray3/bin:/usr/local/majordomo/bin
-BIN_PATH=/usr/softbench/bin:/usr/vue/bin:/usr/bin/X11:/usr/bin:/bin:/usr/ccs/bin:/usr/openwin/bin:/opt/kde/bin:/opt/perl5/bin
+BIN_PATH=/usr/softbench/bin:/usr/vue/bin:/usr/bin/X11:/bin:/usr/bin:/usr/ccs/bin:/usr/openwin/bin:/opt/kde/bin:/opt/perl5/bin:/opt/Office51/bin
 JAVA_PATH=/usr/java1.2/bin:/usr/local/jdk1.2/bin:/usr/local/jre118_v1/bin:/usr/local/jdk1.1.6/bin:/usr/local/jdk1.1.1/bin:/usr/local/java/bin
 ORACLE_PATH=$ORACLE_HOME/bin
 
@@ -115,17 +115,23 @@ esac
 case "$FQDN" in
    calypso.wsr.ac.at)
 	export CVSROOT=/usr/local/src/master
-	export CVS_RSH=/usr/local/bin/ssh
 	;;
    *.luga.at|*.luga.or.at)
 	export CVSROOT=cvs.luga.at:/usr/local/src/master
-	export CVS_RSH=/usr/local/bin/ssh
 	;;
    *)
 	export CVSROOT=cvs.wsr.ac.at:/usr/local/src/master
-	export CVS_RSH=/usr/local/bin/ssh
 	;;
 esac
+
+for i in /usr/local/bin/ssh /usr/bin/ssh
+do
+    if [ -x $i ]
+    then
+	export CVS_RSH=/usr/local/bin/ssh
+    fi
+done
+
 if test "`uname`" = Linux
 then
     limit coredumpsize 64M
