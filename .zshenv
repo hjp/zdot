@@ -240,3 +240,5 @@ if [ -d /usr/local/pgsql/data/ ]
 then
 	export PGDATA=/usr/local/pgsql/data/
 fi
+
+export MAKEFLAGS="-I $HOME/include"
