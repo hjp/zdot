@@ -106,7 +106,7 @@ case "$FQDN" in
 	export CVSROOT=/usr/local/src/master
 	export CVS_RSH=/usr/local/bin/ssh
 	;;
-   *.wsr.ac.at)
+   *)
 	export CVSROOT=cvs.wsr.ac.at:/usr/local/src/master
 	export CVS_RSH=/usr/local/bin/ssh
 	;;
@@ -135,7 +135,7 @@ esac
 
 
 case "$FQDN" in
-   melange.wsr.ac.at)
+   melange.wsr.ac.at|spirit.luga.or.at)
 	export LD_LIBRARY_PATH=/usr/local/lib
 	;;
    *.wsr.ac.at)
