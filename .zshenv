@@ -178,6 +178,7 @@ do
     if [ -x $i ]
     then
 	export CVS_RSH=$i
+	export RSYNC_RSH=$i
     fi
 done
 
