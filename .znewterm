@@ -25,7 +25,7 @@ fi
 
 if [[ .$TERM. = .xterm. ]]
 then
-	prompt="%{]0;%m(%l)%n %~%}$SHLVL.%h%# "
+	prompt="%{]0;%m(%l)%n %~%}%B%m:%~ %T %h%# %b"
 	if test "`uname`" = HP-UX
 	then
 	    export REMOTEHOST=`
@@ -52,7 +52,7 @@ then
 	#unset LINES
 	#unset COLUMNS
 else
-	prompt="%m(%l)%n %~ $SHLVL.%h%# "
+	prompt="%B%m:%~ %T %h%# %b"
 fi
 
 export PROMPT
