@@ -214,6 +214,9 @@ case "$FQDN" in
 	;;
    *.wsr.ac.at)
 	;;
+   trout.adcon.at)
+	export LD_LIBRARY_PATH=$HOME/wrk/a840sw/ia32/lib:/usr/local/lib
+	;;
 esac
 
 
