@@ -217,6 +217,9 @@ case "$FQDN" in
    trout.adcon.at)
 	export LD_LIBRARY_PATH=$HOME/wrk/a840sw/ia32/lib:/usr/local/lib
 	;;
+   teal.h.hjp.at)
+	export LD_LIBRARY_PATH=$HOME/wrk/a840sw/ia32/lib
+	;;
 esac
 
 
