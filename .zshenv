@@ -30,18 +30,21 @@ export PARINIT=q1
 export PARBODY=_A_a
 export LPDEST=wsrplj51
 
+. /etc/oraenv
+
 # set PATH to direcories *I* want.
 PRIVATE_PATH=/usr/local/alpha/mt/bin:$HOME/bin/scripts:$HOME/bin
 ETC_PATH=/usr/etc:/etc:/usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin:/usr/local/qmail/bin:/usr/local/ssl/bin:/usr/adm/acct/wsr/bin
 LOCAL_PATH=/usr/local/etc:/usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11:/usr/local/povray3/bin
-BIN_PATH=/usr/softbench/bin:/usr/vue/bin:/usr/bin/X11:/bin:/usr/bin:/usr/ccs/bin:/usr/openwin/bin
+BIN_PATH=/usr/softbench/bin:/usr/vue/bin:/usr/bin/X11:/bin:/usr/bin:/usr/ccs/bin:/usr/openwin/bin:/opt/kde/bin
 JAVA_PATH=/usr/local/jdk1.1.6/bin:/usr/local/java/bin
+ORACLE_PATH=$ORACLE_HOME/bin
 if [ -r /etc/PATH ]
 then
 	PATH=`cat /etc/PATH`:$PATH
 fi
 
-ALL_PATH=$PRIVATE_PATH:$LOCAL_PATH:$ETC_PATH:$JAVA_PATH:$BIN_PATH:$PATH
+ALL_PATH=$PRIVATE_PATH:$LOCAL_PATH:$ETC_PATH:$JAVA_PATH:$BIN_PATH:$ORACLE_PATH:$PATH
 NEW_PATH=""
 
 for i in ${(s/:/)ALL_PATH}
@@ -135,6 +138,9 @@ esac
 
 
 case "$FQDN" in
+   enkur.wsr.ac.at)
+	export LD_LIBRARY_PATH=$ORACLE_HOME/lib
+	;;
    melange.wsr.ac.at|spirit.luga.or.at)
 	export LD_LIBRARY_PATH=/usr/local/lib
 	;;
