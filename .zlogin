@@ -5,5 +5,5 @@ then
 fi
 date
 uptime
-cd ~/zdot && cvs update -d -P && make install
+[ -n "$SSH_AUTH_SOCK" ] && cd ~/zdot && cvs update -d -P && make install
 cd ~
