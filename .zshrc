@@ -1,3 +1,4 @@
+umask 022
 bindkey -v
 
 alias	amke=make
