@@ -114,6 +114,10 @@ case "$FQDN" in
 	export CVSROOT=/usr/local/src/master
 	export CVS_RSH=/usr/local/bin/ssh
 	;;
+   *.luga.at|*.luga.or.at)
+	export CVSROOT=cvs.luga.at:/usr/local/src/master
+	export CVS_RSH=/usr/local/bin/ssh
+	;;
    *)
 	export CVSROOT=cvs.wsr.ac.at:/usr/local/src/master
 	export CVS_RSH=/usr/local/bin/ssh
