@@ -101,11 +101,11 @@ case "$HOST" in
 esac
 
 case "$FQDN" in
-   wsrk.wsr.ac.at)
-	export CVSROOT=/u/cvs
+   calypso.wsr.ac.at)
+	export CVSROOT=/usr/local/src/master
 	;;
    *.wsr.ac.at)
-	export CVSROOT=wsrk.wsr.ac.at:/u/cvs
+	export CVSROOT=cvs.wsr.ac.at:/usr/local/src/master
 	export CVS_RSH=/usr/local/bin/ssh
 	;;
 esac
