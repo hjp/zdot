@@ -54,4 +54,13 @@ cls()	{ clear; true }
 
 source ~/.znewterm
 
-TMOUT=3600
+# assume pseudo terminals are from a "safe" terminal
+# other terminals are probably from a console and should
+# auto-logout after some time.
+case `tty` in
+/dev/pts/*)
+    TMOUT=0
+    ;;
+*)
+    TMOUT=3600
+esac
