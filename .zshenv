@@ -113,9 +113,11 @@ HP-UX*10.*)
 	;;
 Linux*)
 	export LC_COLLATE=POSIX
+	export LC_TIME=de_AT
 	;;
 esac
 export NLS_LANG=american_america.WE8ISO8859P1
+export NLS_DATE_FORMAT='YYYY-MM-DD HH24:MI:SS'
 
 
 if [ -x /usr/bin/less ]
