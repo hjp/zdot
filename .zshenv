@@ -37,7 +37,7 @@ export LPDEST=wsrplj51
 # set PATH to direcories *I* want.
 PRIVATE_PATH=/usr/local/alpha/mt/bin:$HOME/bin/scripts:$HOME/bin
 ETC_PATH=/usr/local/etc:/usr/etc:/etc:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/samba/bin
-BIN_PATH=/usr/softbench/bin:/usr/vue/bin:/usr/bin/X11:/bin:/usr/bin:/usr/local/bin:/usr/local/bin/X11
+BIN_PATH=/usr/local/bin:/usr/softbench/bin:/usr/vue/bin:/usr/bin/X11:/bin:/usr/bin:/usr/local/bin/X11
 
 ALL_PATH=$PRIVATE_PATH:$ETC_PATH:$BIN_PATH:$PATH
 NEW_PATH=""
