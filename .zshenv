@@ -32,8 +32,8 @@ export LPDEST=wsrplj51
 
 # set PATH to direcories *I* want.
 PRIVATE_PATH=/usr/local/alpha/mt/bin:$HOME/bin/scripts:$HOME/bin
-LOCAL_PATH=/usr/local/etc:/usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11:/usr/local/bin/X11:/usr/local/java/bin:/usr/local/povray3/bin
-ETC_PATH=/usr/etc:/etc:/usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin
+ETC_PATH=/usr/etc:/etc:/usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin:/usr/local/qmail/bin:/usr/local/ssl/bin
+LOCAL_PATH=/usr/local/etc:/usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11:/usr/local/java/bin:/usr/local/povray3/bin
 BIN_PATH=/usr/softbench/bin:/usr/vue/bin:/usr/bin/X11:/bin:/usr/bin:/usr/ccs/bin:/usr/openwin/bin
 
 if [ -r /etc/PATH ]
@@ -114,11 +114,21 @@ if test "`uname`" = Linux
 then
     limit coredumpsize 64M
 fi
-case "$FQDN" in
+
+case "$HOST" in
    SiKitu.wsr.ac.at)
 	export MAIL=$HOME/Maildir
 	;;
    *.wsr.ac.at)
+	;;
+esac
+
+case "$FQDN" in
+   SiKitu.wsr.ac.at)
+	export NNTPSERVER=SiKitu.wsr.ac.at
+	;;
+   *.wsr.ac.at)
+	export NNTPSERVER=news.wsr.ac.at
 	;;
 esac
 
