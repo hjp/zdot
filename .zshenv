@@ -62,6 +62,7 @@ done
 export PATH=$NEW_PATH
 export LANG=american.iso88591
 export LC_COLLATE=american.iso88591@nofold
+export LC_TIME=C
 if test "`uname`" = HP-UX
 then
     # need to set that explicitely on HP-UX. MESZ isn't standard, so
