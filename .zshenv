@@ -169,7 +169,7 @@ then
 fi
 
 case "$FQDN" in
-   teal.h.hjp.at|SiKitu.wsr.ac.at)
+   teal.hjp.at)
 	export MAIL=$HOME/Maildir
 	;;
    *.wsr.ac.at)
@@ -177,11 +177,8 @@ case "$FQDN" in
 esac
 
 case "$FQDN" in
-   *.h.hjp.at)
-	export NNTPSERVER=teal.h.hjp.at
-	;;
-   SiKitu.wsr.ac.at)
-	export NNTPSERVER=SiKitu.wsr.ac.at
+   *.hjp.at)
+	export NNTPSERVER=teal.hjp.at
 	;;
    *.wsr.ac.at)
 	export NNTPSERVER=news.wsr.ac.at
@@ -189,14 +186,8 @@ case "$FQDN" in
 esac
 
 case "$FQDN" in
-   *.h.hjp.at)
-	export http_proxy=http://teal.h.hjp.at:3128/
-	;;
-   SiKitu.wsr.ac.at)
-	export http_proxy=http://SiKitu.wsr.ac.at:3128/
-	;;
-   *.h.hjp.at)
-	export http_proxy=http://teal.h.hjp.at:3128/
+   *.hjp.at)
+	export http_proxy=http://teal.hjp.at:3128/
 	;;
    *.wsr.ac.at)
 	export http_proxy=http://squid.wsr.ac.at:3128/
@@ -220,7 +211,7 @@ case "$FQDN" in
 	;;
    *.wsr.ac.at)
 	;;
-   trout.adcon.at|teal.h.hjp.at)
+   trout.adcon.at|teal.hjp.at)
 	export LD_LIBRARY_PATH=$HOME/wrk/a840/a840sw/ia32/lib:/usr/local/lib
 	;;
 esac
