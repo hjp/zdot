@@ -76,4 +76,4 @@ then
 	export PAGER=/usr/local/bin/less
 fi
 export XAUTHORITY=$HOME/.Xauthority
-export CVSROOT=/nfs/wsrdb/usr/local/src/master
+export CVSROOT=/nfs/wsrdb/u/cvs
