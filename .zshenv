@@ -35,7 +35,7 @@ export PARBODY=_A_a
 export LPDEST=wsrplj51
 
 # set PATH to direcories *I* want.
-PRIVATE_PATH=/usr/local/alpha/mt/bin:/users4/hjp/bin/scripts:/users4/hjp/bin
+PRIVATE_PATH=/usr/local/alpha/mt/bin:$HOME/bin/scripts:$HOME/bin
 ETC_PATH=/usr/local/etc:/usr/etc:/etc:/usr/local/sbin:/usr/sbin:/sbin
 BIN_PATH=/usr/softbench/bin:/usr/vue/bin:/usr/bin/X11:/bin:/usr/bin:/usr/local/bin:/usr/local/bin/X11
 
@@ -62,12 +62,11 @@ done
 export PATH=$NEW_PATH
 export LANG=american.iso88591
 export LC_COLLATE=american.iso88591@nofold
-export LC_TIME=C
 if test "`uname`" = HP-UX
 then
     # need to set that explicitely on HP-UX. MESZ isn't standard, so
     # I do it ONLY on HP-UX
-    export TZ=MET-1MESZ
+    export TZ=MEZ-1MESZ
 fi
 export PAGER=less
 export XAUTHORITY=$HOME/.Xauthority
