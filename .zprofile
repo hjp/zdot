@@ -17,7 +17,10 @@ else
 fi
 vhost=`echo "$vhost" | cut -d . -f 1`
 RECHNER=$vhost
-if [ -z "$SSH_AUTH_SOCK" -a -f "$HOME/.ssh/identity" ]
+
+# I don't understand this any more.
+# looks like a nop to me.
+if [ -n "" -a  -z "$SSH_AUTH_SOCK" -a -f "$HOME/.ssh/identity" ] && tty -s
 then
     eval `ssh-agent`
     ssh-add
