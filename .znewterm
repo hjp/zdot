@@ -1,8 +1,8 @@
 # Initializations to be done on a new terminal. This is
 # called both from .zlogin and .zshrc
 
-# default control characters
-stty erase  kill  susp  intr 
+# default initialization
+. /usr/local/lib/profile-parts/term
 
 # terminal customization
 
