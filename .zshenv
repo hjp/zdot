@@ -115,7 +115,7 @@ then
     limit coredumpsize 64M
 fi
 
-case "$HOST" in
+case "$FQDN" in
    SiKitu.wsr.ac.at)
 	export MAIL=$HOME/Maildir
 	;;
