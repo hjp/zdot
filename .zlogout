@@ -1,4 +1,4 @@
-if [[ -a ~/Dont_forget ]]
+if [ -n "$SSH_AGENT_PID" ]
 then
-	less ~/Dont_forget
+    kill "$SSH_AGENT_PID"
 fi
