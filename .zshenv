@@ -41,7 +41,7 @@ PRIVATE_PATH=$HOME/bin/scripts:$HOME/bin:$HOME/public_html/bin:$HOME/pgreplica/b
 ETC_PATH=/usr/etc:/etc:/usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin:/usr/local/qmail/bin:/usr/local/ssl/bin:/usr/adm/acct/wsr/bin:/opt/tusc/bin:/usr/local/pgsql/bin
 LOCAL_PATH=/usr/local/etc:/usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11:/usr/local/povray3/bin:/usr/local/majordomo/bin:/usr/local/vnc_x86_linux_2.0
 BIN_PATH=/usr/softbench/bin:/usr/bin/X11:/bin:/usr/bin:/usr/ccs/bin:/usr/openwin/bin:/opt/kde/bin:/opt/perl5/bin:/opt/Office51/bin:/usr/games:/usr/contrib/bin
-JAVA_PATH=/usr/local/jdk1.2.2/bin:/usr/java1.2/bin:/usr/local/jdk1.2/bin:/usr/local/jre118_v1/bin:/usr/local/jdk117_v3/bin:/usr/local/jdk1.1.6/bin:/usr/local/jdk1.1.1/bin:/usr/local/java/bin
+JAVA_PATH=/usr/java/j2sdk1.4.0/bin:/usr/local/jdk1.2.2/bin:/usr/java1.2/bin:/usr/local/jdk1.2/bin:/usr/local/jre118_v1/bin:/usr/local/jdk117_v3/bin:/usr/local/jdk1.1.6/bin:/usr/local/jdk1.1.1/bin:/usr/local/java/bin
 ORACLE_PATH=$ORACLE_HOME/bin
 
 if [ -r /etc/PATH ]
