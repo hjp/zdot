@@ -127,6 +127,7 @@ Linux*)
 		# fall back to latin 1.
 		LANG=en_US.iso88591
 	    fi
+	    export LANG
 	fi
 	# export LC_TIME=de_AT # don't remember what that was for
 	;;
