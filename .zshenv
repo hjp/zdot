@@ -60,7 +60,7 @@ do
 done
 
 export PATH=$NEW_PATH
-case `uname -sr` in
+case "`uname -sr`" in
 HP-UX*09.*)
 	export LANG=${LANG:-american.iso88591}
 	export LC_COLLATE=${LC_COLLATE:-american.iso88591@nofold}
