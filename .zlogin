@@ -1,4 +1,3 @@
-setopt ignoreeof
 mesg y
 if [ "`uname`" = "HP-UX" ]
 then

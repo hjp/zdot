@@ -1,3 +1,4 @@
+setopt APPEND_HISTORY
 unsetopt BGNICE
 setopt CHASELINKS
 setopt AUTO_CD
