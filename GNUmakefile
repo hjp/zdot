@@ -1,4 +1,4 @@
-INSTALL=/usr/local/bin/install
+include GNUmakerules
 
 install: \
 	$(HOME)/.zlogin \

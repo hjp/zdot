@@ -22,7 +22,7 @@ alias	ts='tail /usr/spool/mqueue/syslog'
 alias	train='pd ~/wrk/mars/train'
 
 namedir(){
-	$1=~+
+	eval "$1=~+"
 	: ~$1
 }
 

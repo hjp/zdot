@@ -1,3 +1,4 @@
+date
 unsetopt BGNICE
 setopt CHASELINKS
 setopt AUTO_CD
@@ -10,16 +11,19 @@ unsetopt NO_CLOBBER
 setopt NOTIFY
 setopt NUMERIC_GLOB_SORT
 setopt PRINT_EXIT_VALUE
-setopt PUSHD_IGNORE_DUPS
 setopt PUSHD_SILENT
 setopt PUSHD_TO_HOME
 setopt RMSTARSILENT
 setopt NO_PROMPT_CR
 
 # fix problem with nfs
+# Does this still work? I have deleted it at home.
+# in any case I probably don't need it.
 pushd ~
 HOME=`pwd`
 popd
+
+setopt PUSHD_IGNORE_DUPS
 
 fpath=(~/bin/func)
 SAVEHIST=100
@@ -81,10 +85,35 @@ then
 fi
 if [ -x /usr/bin/less ]
 then
-	export PAGER=/usr/bin/less
+	export PAGER="/usr/bin/less -i"
 elif [ -x /usr/local/bin/less ]
 then
-	export PAGER=/usr/local/bin/less
+	export PAGER="/usr/local/bin/less -i"
 fi
 export XAUTHORITY=$HOME/.Xauthority
-export CVSROOT=/nfs/wsrdb/u/cvs
+
+case "$HOST" in
+   wsrk.wsr.ac.at)
+	export CVSROOT=/u/cvs
+	;;
+   SiKitu.wsr.ac.at)
+	export CVSROOT=wsrx.wsr.ac.at:/nfs/wsrk/u/cvs
+	;;
+   *.wsr.ac.at)
+	export CVSROOT=/nfs/wsrk/u/cvs
+	;;
+esac
+if test "`uname`" = Linux
+then
+    limit coredumpsize 64M
+fi
+case "$HOST" in
+   SiKitu.wsr.ac.at)
+	export MAIL=$HOME/Maildir
+	;;
+   *.wsr.ac.at)
+	;;
+esac
+MANPATH=/usr/local/qmail/man:/usr/man:/usr/local/man:/usr/X11R6/man
+export MANPATH
+date
