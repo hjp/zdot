@@ -5,7 +5,10 @@ if [ -f "$EXEC" ]
 then
 	source $EXEC
 fi
-sock=`findsock $$`
+if [ -f /usr/local/bin/findsock ]
+then
+	sock=`findsock $$`
+fi
 if [ -z "$sock" ]
 then
 	vhost=`hostname`
