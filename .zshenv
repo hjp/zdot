@@ -102,7 +102,10 @@ elif [ -x /usr/local/bin/less ]
 then
 	export PAGER="/usr/local/bin/less -i"
 fi
-export XAUTHORITY=$HOME/.Xauthority
+if [ -z "$XAUTHORITY" ] 
+then
+	export XAUTHORITY=$HOME/.Xauthority
+fi
 
 case "$HOST" in 
    *.*)
