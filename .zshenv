@@ -179,9 +179,10 @@ case "$FQDN" in
 	;;
 esac
 
+
 export TABLE_DELIMITER='|'
 
-ALL_PATH=.:/usr/local/java/classes:/usr/local/oracle/classes111.zip:/usr/java1.2/lib/tools.jar:/usr/local/jswdk-1.0.1/lib/servlet.jar
+ALL_PATH=.:/usr/local/java/classes:/usr/local/oracle/classes111.zip:/usr/java1.2/lib/tools.jar:/usr/local/jswdk-1.0.1/lib/servlet.jar:/usr/local/java/lib/Tidy.jar
 NEW_PATH=""
 
 for i in ${(s/:/)ALL_PATH}
