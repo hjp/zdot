@@ -110,6 +110,24 @@ HP-UX*10.*)
 	;;
 Linux*)
 	export LC_COLLATE=POSIX
+	if [ -z "$LANG" ]
+	then
+	    utf=`locale -a | grep en_US.utf8`
+	    if [ -n "$utf" ]
+	    then
+		# this is a bit of a hack -
+		# locale -a advertises the locale as "en_US.utf8",
+		# but the glibc accepts both "en_US.utf8" and
+		# "en_US.UTF-8" and xterm recogizes only the latter.
+		# So we explicitely set the latter, even though that's
+		# not the canonical name and may break some day.
+		# 
+		LANG=en_US.UTF-8
+	    else 
+		# fall back to latin 1.
+		LANG=en_US.iso88591
+	    fi
+	fi
 	# export LC_TIME=de_AT # don't remember what that was for
 	;;
 esac
