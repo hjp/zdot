@@ -1,0 +1,2 @@
+setopt ignoreeof
+mesg y

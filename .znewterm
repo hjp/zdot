@@ -1,0 +1,43 @@
+# Initializations to be done on a new terminal. This is
+# called both from .zlogin and .zshrc
+
+# default control characters
+stty erase  kill  susp  intr 
+
+# terminal customization
+
+if [[ .$TERM. = .console. ]]
+then
+	# Linux console
+	TERM=vt200
+	stty rows 25 cols 80
+fi
+
+if [[ .$TERM. = .vt200. ]]
+then
+	# vt200 not known here 
+	TERM=vt100
+	stty erase 
+fi
+
+if [[ .$TERM. = .xterm. ]]
+then
+	prompt="%{]0;%m(%l)%n %~%}$SHLVL.%h%# "
+	export REMOTEHOST=`
+		who -muR |
+		tr -s ' ' '	' |
+		cut -f 8 | cut -d : -f 1`
+	if [[ -z "$DISPLAY" ]]
+	then
+		export DISPLAY=${REMOTEHOST}:0.0
+	fi
+	if expr "$REMOTEHOST" : ".*\.vmars\.tuwien\.ac\.at" > /dev/null
+	then
+		stty erase 
+	fi
+	eval `resize`
+else
+	prompt="%m(%l)%n %~ $SHLVL.%h%# "
+fi
+
+znewtermexecuted=true
