@@ -70,7 +70,6 @@ done
 
 export PATH=$NEW_PATH
 
-export EDITOR=`echo =vi`
 
 if [ -r /etc/MANPATH ]
 then
