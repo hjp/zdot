@@ -31,7 +31,10 @@ export PARINIT=q1
 export PARBODY=_A_a
 export LPDEST=wsrplj51
 
-. /etc/oraenv
+if [ -f /etc/oraenv ]
+then
+    . /etc/oraenv
+fi
 
 # set PATH to direcories *I* want.
 PRIVATE_PATH=/usr/local/alpha/mt/bin:$HOME/bin/scripts:$HOME/bin
