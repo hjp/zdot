@@ -42,7 +42,4 @@ setenv(){
 
 cls()	{ clear; true }
 
-if [[ "$SHLVL" = 1 ]] 
-then
-	source .znewterm
-fi
+source .znewterm

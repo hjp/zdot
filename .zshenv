@@ -74,6 +74,6 @@ then
 elif [ -x /usr/local/bin/less ]
 then
 	export PAGER=/usr/local/bin/less
-elif
+fi
 export XAUTHORITY=$HOME/.Xauthority
 export CVSROOT=/nfs/wsrdb/usr/local/src/master
