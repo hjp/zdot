@@ -206,8 +206,8 @@ case "$FQDN" in
    *.hjp.at)
 	export http_proxy=http://teal.hjp.at:3128/
 	;;
-   samkar.wsr.ac.at|wsrgeh.wsr.ac.at)
-	export http_proxy=http://squid-x.wsr.ac.at:3128/
+   samkar.wsr.ac.at|wsrgeh.wsr.ac.at|laire.wsr.ac.at)
+	unset http_proxy
 	;;
    *.wsr.ac.at)
 	export http_proxy=http://squid.wsr.ac.at:3128/
