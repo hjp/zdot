@@ -229,7 +229,7 @@ case "$FQDN" in
 	unset http_proxy
 	;;
    *.wsr.ac.at)
-	export http_proxy=http://squid.wsr.ac.at:3128/
+	export http_proxy=http://dobby.wsr.ac.at:3128/
 	;;
 esac
 
