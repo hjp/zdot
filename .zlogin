@@ -4,3 +4,4 @@ then
 	ps -fu $LOGNAME
 fi
 date
+uptime
