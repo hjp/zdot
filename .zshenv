@@ -170,4 +170,24 @@ case "$FQDN" in
 	;;
 esac
 
-export CLASSPATH=.:/usr/local/java/classes:/usr/local/oracle/classes111.zip
+ALL_PATH=.:/usr/local/java/classes:/usr/local/oracle/classes111.zip:/usr/java1.2/lib/tools.jar:/usr/local/jswdk-1.0.1/lib/servlet.jar
+NEW_PATH=""
+
+for i in ${(s/:/)ALL_PATH}
+do
+	if test -r "$i"
+	then
+		case "$NEW_PATH" in
+		$i:*|*:$i|*:$i:*) ;;
+		*)
+			if test -z "$NEW_PATH"
+			then
+				NEW_PATH=$i
+			else
+				NEW_PATH=$NEW_PATH:$i
+			fi
+		esac
+	fi
+done
+
+export CLASSPATH=$NEW_PATH
