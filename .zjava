@@ -1,4 +1,4 @@
-for i in /usr/local/j2sdk1.4.2 /usr/local/j2sdk1.4.1 /usr/java/j2sdk1.4.0 \
+for i in /usr/java/j2sdk1.4.2_03 /usr/local/j2sdk1.4.2 /usr/local/j2sdk1.4.1 /usr/java/j2sdk1.4.0 \
     /usr/java/jdk1.3.1_02 /usr/java/jre1.3.1_02 \
     /usr/local/jdk1.2.2 /usr/java1.2 /usr/local/jdk1.2 \
     /usr/local/jdk117_v3 /usr/local/jdk1.1.6 \
