@@ -38,7 +38,7 @@ fi
 # set PATH to direcories *I* want.
 PRIVATE_PATH=$HOME/bin/scripts:$HOME/bin:$HOME/public_html/bin:$HOME/pgreplica/bin
 ETC_PATH=/usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin:/var/qmail/bin:/usr/local/ssl/bin:/usr/adm/acct/wsr/bin:/opt/tusc/bin:/usr/local/pgsql/bin
-LOCAL_PATH=/usr/local/arm-linux/bin:/usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11:/usr/local/povray3/bin:/usr/local/majordomo/bin:/usr/local/vnc_x86_linux_2.0
+LOCAL_PATH=/usr/local/arm-linux/bin:/usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11:/usr/local/povray3/bin:/usr/local/majordomo/bin:/usr/lib/majordomo/bin:/usr/local/vnc_x86_linux_2.0
 BIN_PATH=/usr/bin/X11:/bin:/usr/bin:/usr/ccs/bin:/usr/openwin/bin:/opt/kde/bin:/opt/perl5/bin:/opt/Office51/bin:/usr/games:/usr/contrib/bin
 JAVA_PATH=/usr/java/j2sdk1.4.0/bin:/usr/local/jdk1.2.2/bin:/usr/java1.2/bin:/usr/local/jdk1.2/bin:/usr/local/jdk117_v3/bin:/usr/local/jdk1.1.6/bin:/usr/local/java/bin
 ORACLE_PATH=$ORACLE_HOME/bin
@@ -76,7 +76,7 @@ if [ -r /etc/MANPATH ]
 then
 	MANPATH=`cat /etc/MANPATH`:$MANPATH
 else
-	ALL_PATH=/usr/local/qmail/man:/usr/man:/usr/local/man:/usr/X11R6/man:/usr/share/man:/usr/local/pgsql/man
+	ALL_PATH=/usr/local/qmail/man:/usr/man:/usr/local/man:/usr/X11R6/man:/usr/share/man:/usr/local/pgsql/man:/var/qmail/man
 	NEW_PATH=""
 
 	for i in ${(s/:/)ALL_PATH}
