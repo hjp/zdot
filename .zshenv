@@ -172,7 +172,7 @@ case "$FQDN" in
    enkur.wsr.ac.at)
 	export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/usr/local/mnemonic/lib:/usr/local/mnemonic/lib/msg
 	;;
-   melange.wsr.ac.at|spirit.luga.at|chthon.wsr.ac.at|posbi.wsr.ac.at|SiKitu.wsr.ac.at|teal.h.hjp.at)
+   melange.wsr.ac.at|spirit.luga.at|chthon.wsr.ac.at|posbi.wsr.ac.at|teal.h.hjp.at|wsrgeh.wsr.ac.at)
 	export LD_LIBRARY_PATH=/usr/local/lib
 	;;
    *.wsr.ac.at)
