@@ -232,7 +232,7 @@ case "$FQDN" in
    wsrgeh.wsr.ac.at|coney.wsr.ac.at|bernon.wsr.ac.at)
 	export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/usr/local/lib
 	;;
-   melange.wsr.ac.at|spirit.luga.at|chthon.h.hjp.at|posbi.wsr.ac.at|braveheart.wsr.ac.at|dialog.wsr.ac.at|samkar.wsr.ac.at|yoyo.hjp.at|yoyo.wsr.ac.at|localhost.localdomain|teal.hjp.at)
+   ariel.wsr.ac.at|chthon.h.hjp.at|posbi.wsr.ac.at|braveheart.wsr.ac.at|dialog.wsr.ac.at|samkar.wsr.ac.at|yoyo.hjp.at|yoyo.wsr.ac.at|localhost.localdomain|teal.hjp.at)
 	export LD_LIBRARY_PATH=/usr/local/lib
 	;;
    *.wsr.ac.at)
