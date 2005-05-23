@@ -7,7 +7,7 @@ do
     if [ -d "$i/bin" ]
     then
 	PATH=$(apppath "$i/bin")
-	export JAVA_HOME=bin
+	export JAVA_HOME=$i
 	break;
     fi
 done
@@ -34,3 +34,33 @@ done
 
 export CLASSPATH=$NEW_PATH
 
+for i in /usr/local/tomcat
+do
+    if [ -d "$i" ]
+    then
+	export CATALINA_HOME="$i"
+	export TOMCAT_HOME="$i"
+	PATH=$(apppath "$i/bin")
+	break;
+    fi
+done
+
+for i in /usr/local/ant
+do
+    if [ -d "$i" ]
+    then
+	export ANT_HOME="$i"
+	PATH=$(apppath "$i/bin")
+	break;
+    fi
+done
+
+for i in /usr/local/openxchange
+do
+    if [ -d "$i" ]
+    then
+	export OX_HOME="$i"
+	PATH=$(apppath "$i/bin" "$i/sbin")
+	break;
+    fi
+done
