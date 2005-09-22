@@ -35,40 +35,18 @@ then
 	. /etc/oraenv
 fi
 
-# set PATH to direcories *I* want.
-PRIVATE_PATH=$HOME/bin/hosts:$HOME/bin/scripts:$HOME/bin:$HOME/public_html/bin:$HOME/pgreplica/bin
-ETC_PATH=/usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin:/var/qmail/bin:/usr/local/ssl/bin:/usr/adm/acct/wsr/bin:/opt/tusc/bin:/usr/local/pgsql/bin
-LOCAL_PATH=/usr/local/arm-linux/bin:/usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11:/usr/local/povray3/bin:/usr/local/majordomo/bin:/usr/lib/majordomo/bin:/usr/local/vnc_x86_linux_2.0:/usr/local/rrdtool-1.0.35/bin:/usr/local/OpenOffice.org1.0.2/program
-BIN_PATH=/usr/bin/X11:/bin:/usr/bin:/usr/ccs/bin:/usr/openwin/bin:/opt/kde/bin:/opt/perl5/bin:/opt/Office51/bin:/usr/games:/usr/contrib/bin
-ORACLE_PATH=$ORACLE_HOME/bin
-
-if [ -r /etc/PATH ]
+if whence preppath > /dev/null
 then
-	PATH=`cat /etc/PATH`:$PATH
+    if [ -r /etc/PATH ]
+    then
+	PATH=$(preppath $(cat /etc/PATH) )
+    fi
+    PATH=`preppath -c $ORACLE_HOME/bin`
+    PATH=`preppath -c /usr/bin/X11:/bin:/usr/bin:/usr/ccs/bin:/usr/openwin/bin:/opt/kde/bin:/opt/perl5/bin:/opt/Office51/bin:/usr/games:/usr/contrib/bin`
+    PATH=`preppath -c /usr/local/arm-linux/bin:/usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11:/usr/local/povray3/bin:/usr/local/majordomo/bin:/usr/lib/majordomo/bin:/usr/local/vnc_x86_linux_2.0:/usr/local/rrdtool-1.0.35/bin:/usr/local/OpenOffice.org1.0.2/program`
+    PATH=`preppath -c /usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin:/var/qmail/bin:/usr/local/ssl/bin:/usr/adm/acct/wsr/bin:/opt/tusc/bin:/usr/local/pgsql/bin`
+    PATH=`preppath -c $HOME/bin/hosts:$HOME/bin/scripts:$HOME/bin:$HOME/public_html/bin:$HOME/pgreplica/bin`
 fi
-
-ALL_PATH=$PRIVATE_PATH:$LOCAL_PATH:$ETC_PATH:$BIN_PATH:$ORACLE_PATH:$PATH
-NEW_PATH=""
-
-for i in ${(s/:/)ALL_PATH}
-do
-	if test -d "$i"
-	then
-		case "$NEW_PATH" in
-		$i:*|*:$i|*:$i:*) ;;
-		*)
-			if test -z "$NEW_PATH"
-			then
-				NEW_PATH=$i
-			else
-				NEW_PATH=$NEW_PATH:$i
-			fi
-		esac
-	fi
-done
-
-export PATH=$NEW_PATH
-
 
 if [ -r /etc/MANPATH ]
 then
