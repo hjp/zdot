@@ -26,22 +26,6 @@ fi
 if [[ .$TERM. = .xterm. ]]
 then
 	prompt="%{]0;%m(%l)%n %~%}%B%m:%~ %T %h%# %b"
-	if test "`uname`" = HP-UX
-	then
-	    export REMOTEHOST=`
-		    /bin/who -muR |
-		    tr -s ' ' '	' |
-		    cut -f 8 | cut -d : -f 1`
-	else
-	    export REMOTEHOST=`
-		    who am i |
-		    grep '(.*)' |
-		    sed -e 's/.*(\(.*\)).*/\1/'`
-	fi
-	if [[ -z "$DISPLAY" ]]
-	then
-		export DISPLAY=${REMOTEHOST}:0.0
-	fi
 	# force backspace key to send BS:
 	# warning: This works with real xterm and rxvt
 	# it doesn't work with konsole or gnome-terminal.
