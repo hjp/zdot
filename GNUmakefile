@@ -1,6 +1,3 @@
-include GNUmakerules
-include GNUmakevars
-
 ALLSRC = \
 	.zjava \
 	.zlogin \
@@ -19,7 +16,7 @@ echo:
 	echo $(ALLDST)
 
 $(HOME)/%: %
-	$(INSTALL) $^ $@
+	cp $^ $@
 
 diff:
 	for i in $(ALLSRC); do diff -u $(HOME)/$$i $$i; done
