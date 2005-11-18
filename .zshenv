@@ -35,19 +35,29 @@ then
 	. /etc/oraenv
 fi
 
-if whence preppath > /dev/null
+# don't rely on a sane path at this point:
+for i in /usr/bin/preppath /usr/local/bin/preppath
+do
+    if [ -x $i ]
+    then
+    	preppath=$i
+	break;
+    fi
+done
+
+if [ -n "$preppath" ]
 then
     if [ -r /etc/PATH ]
     then
-	PATH=$(preppath $(cat /etc/PATH) )
+	PATH=$($preppath $(cat /etc/PATH) )
     fi
 
     # first prepend important stuff
-    PATH=`preppath -c $ORACLE_HOME/bin`
-    PATH=`preppath -c /usr/bin/X11:/bin:/usr/bin:/usr/ccs/bin:/opt/perl5/bin:/usr/games:/usr/contrib/bin`
-    PATH=`preppath -c /usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11:/usr/local/majordomo/bin:/usr/lib/majordomo/bin:/usr/local/vnc_x86_linux_2.0:/usr/local/rrdtool-1.0.35/bin`
-    PATH=`preppath -c /usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin:/var/qmail/bin:/usr/local/ssl/bin:/usr/adm/acct/wsr/bin:/opt/tusc/bin`
-    PATH=`preppath -c $HOME/bin/hosts:$HOME/bin`
+    PATH=`$preppath -c $ORACLE_HOME/bin`
+    PATH=`$preppath -c /usr/bin/X11:/bin:/usr/bin:/usr/ccs/bin:/opt/perl5/bin:/usr/games:/usr/contrib/bin`
+    PATH=`$preppath -c /usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11:/usr/local/majordomo/bin:/usr/lib/majordomo/bin:/usr/local/vnc_x86_linux_2.0:/usr/local/rrdtool-1.0.35/bin`
+    PATH=`$preppath -c /usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin:/var/qmail/bin:/usr/local/ssl/bin:/usr/adm/acct/wsr/bin:/opt/tusc/bin`
+    PATH=`$preppath -c $HOME/bin/hosts:$HOME/bin`
 
     # then append less important stuff
     PATH=`apppath -c /opt/Navisphere/bin`
