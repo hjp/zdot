@@ -61,6 +61,7 @@ then
 
     # then append less important stuff
     PATH=`apppath -c /opt/Navisphere/bin`
+    PATH=`apppath -c /opt/openoffice.org2.0/program`
 fi
 
 if [ -r /etc/MANPATH ]
