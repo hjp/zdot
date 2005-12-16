@@ -27,14 +27,6 @@ export PGPPATH=~/.pgp
 export PARINIT=q1
 export PARBODY=_A_a
 
-if [ -f $HOME/etc/oraenv ] 
-then 
-	. $HOME/etc/oraenv
-elif [ -f /etc/oraenv ]
-then
-	. /etc/oraenv
-fi
-
 # don't rely on a sane path at this point:
 for i in /usr/bin/preppath /usr/local/bin/preppath
 do
@@ -53,7 +45,6 @@ then
     fi
 
     # first prepend important stuff
-    PATH=`$preppath -c $ORACLE_HOME/bin`
     PATH=`$preppath -c /usr/bin/X11:/bin:/usr/bin:/usr/ccs/bin:/opt/perl5/bin:/usr/games:/usr/contrib/bin`
     PATH=`$preppath -c /usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11:/usr/local/majordomo/bin:/usr/lib/majordomo/bin:/usr/local/vnc_x86_linux_2.0:/usr/local/rrdtool-1.0.35/bin`
     PATH=`$preppath -c /usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin:/var/qmail/bin:/usr/local/ssl/bin:/usr/adm/acct/wsr/bin:/opt/tusc/bin`
@@ -223,10 +214,7 @@ esac
 
 
 case "$FQDN" in
-   wsrgeh.wsr.ac.at|coney.wsr.ac.at|bernon.wsr.ac.at)
-	export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/usr/local/lib
-	;;
-   ariel.wsr.ac.at|chthon.h.hjp.at|posbi.wsr.ac.at|braveheart.wsr.ac.at|dialog.wsr.ac.at|samkar.wsr.ac.at|yoyo.hjp.at|yoyo.wsr.ac.at|localhost.localdomain|teal.hjp.at)
+   wsrgeh.wsr.ac.at|coney.wsr.ac.at|bernon.wsr.ac.at|ariel.wsr.ac.at|chthon.h.hjp.at|posbi.wsr.ac.at|braveheart.wsr.ac.at|dialog.wsr.ac.at|samkar.wsr.ac.at|yoyo.hjp.at|yoyo.wsr.ac.at|localhost.localdomain|teal.hjp.at)
 	export LD_LIBRARY_PATH=/usr/local/lib
 	;;
    *.wsr.ac.at)
@@ -251,3 +239,12 @@ then
 fi
 
 export PERL_UNICODE=SDAL
+
+if [ -f $HOME/etc/oraenv ] 
+then 
+	. $HOME/etc/oraenv
+elif [ -f /etc/oraenv ]
+then
+	. /etc/oraenv
+fi
+
