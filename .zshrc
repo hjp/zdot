@@ -23,6 +23,7 @@ else
 fi
 alias	la='ls	-alsF'
 alias	cup='cvs -q update -d -P'
+alias	digs='dig +nocomments +nostats +nocmd'
 
 namedir(){
 	eval "$1=~+"
