@@ -44,15 +44,18 @@ then
 	PATH=$($preppath $(cat /etc/PATH) )
     fi
 
-    # first prepend important stuff
+    # first prepend important stuff - in order of increasing priority:
+
     PATH=`$preppath -c /usr/bin/X11:/bin:/usr/bin:/usr/ccs/bin:/opt/perl5/bin:/usr/games:/usr/contrib/bin`
+    # openoffice 1.1 is in /usr/bin, so we need to prepend 
+    # oo2.0 before it:
+    PATH=`$preppath -c /opt/openoffice.org2.0/program`
     PATH=`$preppath -c /usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11:/usr/local/majordomo/bin:/usr/lib/majordomo/bin:/usr/local/vnc_x86_linux_2.0:/usr/local/rrdtool-1.0.35/bin`
     PATH=`$preppath -c /usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin:/var/qmail/bin:/usr/local/ssl/bin:/usr/adm/acct/wsr/bin:/opt/tusc/bin`
     PATH=`$preppath -c $HOME/bin/hosts:$HOME/bin`
 
     # then append less important stuff
     PATH=`apppath -c /opt/Navisphere/bin`
-    PATH=`apppath -c /opt/openoffice.org2.0/program`
 fi
 
 if [ -r /etc/MANPATH ]
