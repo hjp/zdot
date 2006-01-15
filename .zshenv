@@ -50,8 +50,9 @@ then
     # openoffice 1.1 is in /usr/bin, so we need to prepend 
     # oo2.0 before it:
     PATH=`$preppath -c /opt/openoffice.org2.0/program`
-    PATH=`$preppath -c /usr/local/sbin:/usr/local/samba/bin:/usr/local/bin:/usr/local/bin/X11:/usr/local/majordomo/bin:/usr/lib/majordomo/bin:/usr/local/vnc_x86_linux_2.0:/usr/local/rrdtool-1.0.35/bin`
+    PATH=`$preppath -c /usr/local/samba/bin:/usr/local/bin/X11:/usr/local/majordomo/bin:/usr/lib/majordomo/bin:/usr/local/vnc_x86_linux_2.0:/usr/local/rrdtool-1.0.35/bin`
     PATH=`$preppath -c /usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin:/var/qmail/bin:/usr/local/ssl/bin:/usr/adm/acct/wsr/bin:/opt/tusc/bin`
+    PATH=`$preppath -c /usr/local/sbin:/usr/local/bin`
     PATH=`$preppath -c $HOME/bin/hosts:$HOME/bin`
 
     # then append less important stuff
