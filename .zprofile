@@ -1,26 +1,9 @@
 #
-# $Id: .zprofile,v 1.14 2005-02-22 18:22:34 hjp Exp $
+# $Id: .zprofile,v 1.15 2006-02-02 16:01:12 hjp Exp $
 #
 # this is sourced for login shells after .zshenv but before .zshrc
 #
 umask 022
-if [ -f /usr/local/bin/findsock ]
-then
-	sock=`findsock $$`
-fi
-if [ -z "$sock" ]
-then
-	vhost=`hostname`
-else 
-	vhost="$sock"
-fi
-vhost=`echo "$vhost" | cut -d . -f 1`
-RECHNER=$vhost
-
-if [ -f /etc/oraprofile ]
-then
-    . /etc/oraprofile
-fi
 
 unset MAILCHECK
 export EDITOR=vi
