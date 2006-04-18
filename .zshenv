@@ -26,6 +26,8 @@ HISTFILE=~/.zhistory
 export PGPPATH=~/.pgp
 export PARINIT=q1
 export PARBODY=_A_a
+export DEBEMAIL=hjp@hjp.at
+
 
 # don't rely on a sane path at this point:
 for i in /usr/bin/preppath /usr/local/bin/preppath
@@ -207,7 +209,7 @@ case "$FQDN" in
    *.hjp.at)
 	export http_proxy=http://teal.hjp.at:3128/
 	;;
-   samkar.wsr.ac.at|wsrgeh.wsr.ac.at|laire.wsr.ac.at|spiridon*.wsr.ac.at|habanero.wsr.ac.at)
+   samkar.wsr.ac.at|wsrgeh.wsr.ac.at|laire.wsr.ac.at|spiridon*.wsr.ac.at|habanero.wsr.ac.at|haldir.wsr.ac.at)
 	unset http_proxy
 	;;
    *.wsr.ac.at)
