@@ -1,12 +1,11 @@
 #
-# $Id: .zprofile,v 1.15 2006-02-02 16:01:12 hjp Exp $
+# $Id: .zprofile,v 1.16 2006-07-10 15:22:01 hjp Exp $
 #
 # this is sourced for login shells after .zshenv but before .zshrc
 #
 umask 022
 
 unset MAILCHECK
-export EDITOR=vi
 
 if [ -f /etc/sysconfig/i18n ]
 then

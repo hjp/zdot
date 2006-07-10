@@ -67,3 +67,8 @@ case `tty` in
 *)
     TMOUT=3600
 esac
+
+if [ -z "$EDITOR" ]
+then
+    export EDITOR=vi
+fi
