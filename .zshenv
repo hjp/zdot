@@ -244,7 +244,7 @@ then
     export HOME_WWW=/home/www
 fi
 
-export PERL_UNICODE=SDAL
+export PERL_UNICODE=SAL
 
 if [ -f $HOME/etc/oraenv ] 
 then 
