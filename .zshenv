@@ -48,7 +48,8 @@ then
 
     # first prepend important stuff - in order of increasing priority:
 
-    PATH=`$preppath -c /usr/bin/X11:/bin:/usr/bin:/usr/games:/usr/contrib/bin`
+    PATH=`$preppath -c /usr/bin/X11:/usr/games:/usr/contrib/bin`
+    PATH=`$preppath -c /bin:/usr/bin`
     # openoffice 1.1 is in /usr/bin, so we need to prepend 
     # oo2.0 before it:
     PATH=`$preppath -c /opt/openoffice.org2.0/program`
@@ -207,7 +208,7 @@ esac
 
 case "$FQDN" in
    *.hjp.at)
-	export http_proxy=http://teal.hjp.at:3128/
+	export http_proxy=http://zeno.hjp.at:3128/
 	;;
    samkar.wsr.ac.at|wsrgeh.wsr.ac.at|laire.wsr.ac.at|spiridon*.wsr.ac.at|habanero.wsr.ac.at|haldir.wsr.ac.at)
 	unset http_proxy
