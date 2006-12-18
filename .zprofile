@@ -1,5 +1,5 @@
 #
-# $Id: .zprofile,v 1.16 2006-07-10 15:22:01 hjp Exp $
+# $Id: .zprofile,v 1.17 2006-12-18 16:22:26 hjp Exp $
 #
 # this is sourced for login shells after .zshenv but before .zshrc
 #
@@ -18,3 +18,9 @@ fi
 # Set to non-working default values on SUSE Linux.
 # I don't use that anyway, so I just unset these values:
 unset LESSOPEN LESSCLOSE
+
+# for TGIF:
+if [ -f /etc/X11/rgb.txt ]
+then
+    export RGBDEF=/etc/X11/rgb.txt
+fi
