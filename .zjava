@@ -5,7 +5,9 @@
 
 if whence apppath > /dev/null
 then
-    for i in /usr/java/j2sdk1.4.2_03 \
+    for i in \
+	/usr/lib/j2re1.5-sun \
+	/usr/java/j2sdk1.4.2_03 \
 	/usr/local/j2sdk1.3.0 \
 	/usr/local/jdk1.2.2 \
 	/usr/local/java \
