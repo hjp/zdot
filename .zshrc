@@ -72,3 +72,13 @@ if [ -z "$EDITOR" ]
 then
     export EDITOR=vi
 fi
+
+# prepend local function dir if we have one.
+#
+# Important: Don't clobber FPATH. It's needed for completion and usually
+# contains a lot of directories (at least on Debian systems) and you
+# don't want to recreate that mess manually.
+if [ -d ~/bin/func ]
+then
+    FPATH=`preppath -v FPATH ~/bin/func`
+fi

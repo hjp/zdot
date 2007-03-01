@@ -19,7 +19,6 @@ setopt NO_PROMPT_CR
 
 setopt PUSHD_IGNORE_DUPS
 
-fpath=(~/bin/func)
 SAVEHIST=100
 HISTSIZE=$SAVEHIST
 HISTFILE=~/.zhistory
