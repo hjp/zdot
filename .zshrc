@@ -82,3 +82,8 @@ if [ -d ~/bin/func ]
 then
     FPATH=`preppath -v FPATH ~/bin/func`
 fi
+
+# for new style completion:
+autoload -U compinit
+compinit
+
