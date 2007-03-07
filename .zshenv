@@ -220,8 +220,11 @@ esac
 
 
 case "$FQDN" in
-   wsrgeh.wsr.ac.at|coney.wsr.ac.at|bernon.wsr.ac.at|ariel.wsr.ac.at|chthon.h.hjp.at|posbi.wsr.ac.at|braveheart.wsr.ac.at|dialog.wsr.ac.at|samkar.wsr.ac.at|yoyo.hjp.at|yoyo.wsr.ac.at|localhost.localdomain|teal.hjp.at|tanstaafl.wsr.ac.at)
+   wsrgeh.wsr.ac.at|coney.wsr.ac.at|bernon.wsr.ac.at|ariel.wsr.ac.at|chthon.h.hjp.at|posbi.wsr.ac.at|braveheart.wsr.ac.at|dialog.wsr.ac.at|samkar.wsr.ac.at|yoyo.hjp.at|yoyo.wsr.ac.at|localhost.localdomain|teal.hjp.at)
 	export LD_LIBRARY_PATH=/usr/local/lib
+	;;
+   tanstaafl.wsr.ac.at)
+	export LD_LIBRARY_PATH=`preppath -v LD_LIBRARY_PATH /usr/local/lib`
 	;;
    *.wsr.ac.at)
 	;;
