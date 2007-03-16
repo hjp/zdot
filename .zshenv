@@ -254,4 +254,7 @@ elif [ -f /etc/oraenv ]
 then
 	. /etc/oraenv
 fi
-
+if [ -n "$ORACLE_HOME" ]
+then
+    PATH=`apppath "$ORACLE_HOME/bin"`
+fi
