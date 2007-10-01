@@ -205,18 +205,6 @@ case "$FQDN" in
 	;;
 esac
 
-case "$FQDN" in
-   *.hjp.at)
-	export http_proxy=http://zeno.hjp.at:3128/
-	;;
-   samkar.wsr.ac.at|wsrgeh.wsr.ac.at|laire.wsr.ac.at|spiridon*.wsr.ac.at|habanero.wsr.ac.at|haldir.wsr.ac.at|tanstaafl.wsr.ac.at|shalmaneser.wsr.ac.at)
-	unset http_proxy
-	;;
-   *.wsr.ac.at)
-	export http_proxy=http://squid.wsr.ac.at:3128/
-	;;
-esac
-
 
 
 case "$FQDN" in
