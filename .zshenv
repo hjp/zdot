@@ -246,3 +246,16 @@ if [ -n "$ORACLE_HOME" ]
 then
     PATH=`apppath "$ORACLE_HOME/bin"`
 fi
+
+case "$FQDN" in
+   tanstaafl.wsr.ac.at)
+	export WZRP_CONN=~/.dbi/fiwdev
+	;;
+   shalmaneser.wsr.ac.at)
+	export WZRP_CONN=~/.dbi/fiwprod
+	;;
+   pashkan.wsr.ac.at)
+	export WZRP_CONN=~/.dbi/fiwprod
+	;;
+esac
+
