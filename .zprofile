@@ -1,5 +1,5 @@
 #
-# $Id: .zprofile,v 1.19 2007-10-09 11:49:11 hjp Exp $
+# $Id: .zprofile,v 1.20 2008-05-02 09:00:15 hjp Exp $
 #
 # this is sourced for login shells after .zshenv but before .zshrc
 #
@@ -29,13 +29,5 @@ if [ "`uname`" = HP-UX ]
 then
     export http_proxy=http://squid.wsr.ac.at:3128/
 else 
-    unset http_proxy
-    for i in http://zeno.hjp.at:3128/ http://squid.wsr.ac.at:3128/
-    do
-	if http_proxy=$i wget -q -O /dev/null http://www.hjp.at
-	then
-	    export http_proxy=$i
-	    break
-	fi
-    done
+    http_proxy=`findproxy  http://zeno.hjp.at:3128/ http://squid.wsr.ac.at:3128/`
 fi
