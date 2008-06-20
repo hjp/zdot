@@ -59,6 +59,7 @@ then
     # then append less important stuff
     PATH=`apppath -c /opt/Navisphere/bin`
     PATH=`apppath -c /usr/local/majordomo/bin:/usr/lib/majordomo/bin:/usr/local/vnc_x86_linux_2.0:/usr/local/rrdtool-1.0.35/bin`
+    PATH=`apppath -c /usr/local/www/offline/devel.fiw/bin`
 fi
 
 if [ -r /etc/MANPATH ]
