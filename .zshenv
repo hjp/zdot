@@ -266,7 +266,7 @@ case "$FQDN" in
 	PATH=`apppath /usr/local/www/offline/devel.fiw/bin`
 	;;
    shalmaneser.wsr.ac.at)
-	export  PERL5LIB=/usr/local/www/offline/dal.fiw/lib/perl5
+	export  PERL5LIB=/home/hjp/wrk/wzrp-tng/import/wiiw/lib:/usr/local/www/offline/dal.fiw/lib/perl5
 	PATH=`apppath /usr/local/www/offline/dal.fiw/bin`
 	;;
    pashkan.wsr.ac.at)
