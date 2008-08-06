@@ -25,7 +25,10 @@ fi
 
 if [[ .$TERM. = .xterm. ]]
 then
-	prompt="%{]0;%m(%l)%n %~%}%B%m:%~ %T %h%# %b"
+	# indicated exit status by smiley (suggested by Stig Sandbeck Mathisen)
+	smiley="%b%(0?,%{[32m%}:-),%{[31m%}:-()%{[30m%}%B"
+	prompt="%{]0;%m(%l)%n %~%}%B%m:%~ %T $smiley %h%# %b"
+	unsetopt PRINT_EXIT_VALUE
 	# force backspace key to send BS:
 	# warning: This works with real xterm and rxvt
 	# it doesn't work with konsole or gnome-terminal.
