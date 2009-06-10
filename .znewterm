@@ -34,6 +34,12 @@ then
 	# it doesn't work with konsole or gnome-terminal.
 	echo -n '[?67h'
 	stty erase 
+	if [ -f ~/.zxtermcolors ]
+	then
+	    . ~/.zxtermcolors
+	else
+	    perl -e 'printf(qq{if whence xtermcontrol >/dev/null\nthen\nxtermcontrol --bg "#%02X%02X%02X"\nfi\n}, map { rand(128)+128 } qw(1 1 1))' > ~/.zxtermcolors
+	fi
 else
 	prompt="%B%m:%~ %T %h%# %b"
 fi
