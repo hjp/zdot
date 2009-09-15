@@ -273,3 +273,14 @@ case "$FQDN" in
 	;;
 esac
 
+case "$FQDN" in
+   algernon.wsr.ac.at)
+	export PGHOST=$FQDN
+        export PGUSER=fiw
+	;;
+   pashkan.wsr.ac.at)
+	export PGHOST=$FQDN
+        export PGUSER=fiw
+	;;
+esac
+
