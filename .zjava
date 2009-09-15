@@ -6,6 +6,7 @@
 if whence apppath > /dev/null
 then
     for i in \
+        /usr/local/jre1.6.0_14 \
 	/usr/local/jdk1.5.0_08 \
 	/usr/lib/j2re1.5-sun \
 	/usr/java/j2sdk1.4.2_03 \
