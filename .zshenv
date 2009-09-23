@@ -284,3 +284,9 @@ case "$FQDN" in
 	;;
 esac
 
+case "$FQDN" in
+   *.wsr.ac.at)
+	export LOCALDOMAIN="wsr.ac.at hjp.at"
+	;;
+esac
+
