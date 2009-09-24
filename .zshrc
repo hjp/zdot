@@ -68,6 +68,13 @@ case `tty` in
     TMOUT=3600
 esac
 
+# and screen sessions shouldn't terminate at all ...
+case "$TERM" in
+screen)
+    unset TMOUT
+    ;;
+esac
+
 if [ -z "$EDITOR" ]
 then
     export EDITOR=vi
