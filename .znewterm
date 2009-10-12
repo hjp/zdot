@@ -23,7 +23,7 @@ then
 	stty erase 
 fi
 
-if [[ .$TERM. = .xterm. ]]
+if [[ $TERM = xterm || $TERM = xterm-256color ]]
 then
 	# indicated exit status by smiley (suggested by Stig Sandbeck Mathisen)
 	smiley="%b%(0?,%{[32m%}:-),%{[31m%}:-()%{[30m%}%B"
