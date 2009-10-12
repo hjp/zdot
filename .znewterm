@@ -23,6 +23,11 @@ then
 	stty erase 
 fi
 
+if [[ $TERM == xterm-256color && ! -f /usr/share/terminfo/x/xterm-256color ]]
+then
+	TERM=xterm
+fi
+
 if [[ $TERM = xterm || $TERM = xterm-256color ]]
 then
 	# indicated exit status by smiley (suggested by Stig Sandbeck Mathisen)
