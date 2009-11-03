@@ -258,6 +258,9 @@ case "$FQDN" in
    pashkan.wsr.ac.at)
 	export WZRP_CONN=~/.dbi/fiwprod
 	;;
+   algernon.wsr.ac.at)
+	export WZRP_CONN=~/.dbi/fiwpg
+	;;
 esac
 
 case "$FQDN" in
