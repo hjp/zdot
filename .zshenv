@@ -294,3 +294,15 @@ case "$FQDN" in
 	;;
 esac
 
+if [ -d $HOME/go ]
+then
+    export GOROOT=$HOME/go
+    export GOOS=linux
+    case `uname  -m` in
+    x86_64)
+        export GOARCH=amd64
+        ;;
+    *)
+        export GOARCH=386
+    esac
+fi
