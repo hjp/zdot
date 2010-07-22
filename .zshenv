@@ -260,7 +260,7 @@ case "$FQDN" in
 	export WZRP_CONN=~/.dbi/fiwprod
 	;;
    algernon.wsr.ac.at)
-	export WZRP_CONN=~/.dbi/fiwpg
+	export WZRP_CONN=~/.dbi/fiwssd
 	;;
 esac
 
