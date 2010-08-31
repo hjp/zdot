@@ -254,10 +254,10 @@ case "$FQDN" in
 	export WZRP_CONN=~/.dbi/fiwssd
 	;;
    shalmaneser.wsr.ac.at)
-	export WZRP_CONN=~/.dbi/fiwprod
+	export WZRP_CONN=~/.dbi/fiwssd
 	;;
    pashkan.wsr.ac.at)
-	export WZRP_CONN=~/.dbi/fiwprod
+	export WZRP_CONN=~/.dbi/fiwdevel
 	;;
    algernon.wsr.ac.at)
 	export WZRP_CONN=~/.dbi/fiwssd
