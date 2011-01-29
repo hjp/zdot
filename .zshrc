@@ -24,7 +24,7 @@ fi
 alias	la='ls	-alsF'
 alias	cup='cvs -q update -d -P'
 alias	digs='dig +nocomments +nostats +nocmd'
-if [ -x =ack-grep ]
+if whence ack-grep
 then
     alias ack='ack-grep'
 fi
