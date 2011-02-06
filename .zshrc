@@ -24,9 +24,9 @@ fi
 alias	la='ls	-alsF'
 alias	cup='cvs -q update -d -P'
 alias	digs='dig +nocomments +nostats +nocmd'
-if whence ack-grep
+if ack=`whence ack-grep`
 then
-    alias ack='ack-grep'
+    alias ack=$ack
 fi
 
 namedir(){
