@@ -251,13 +251,13 @@ then
 fi
 
 case "$FQDN" in
-   tanstaafl.wsr.ac.at)
-	export WZRP_CONN=~/.dbi/fiwssd
-	;;
    shalmaneser.wsr.ac.at)
 	export WZRP_CONN=~/.dbi/fiwssd
 	;;
    pashkan.wsr.ac.at)
+	export WZRP_CONN=~/.dbi/fiwdevel
+	;;
+   mri.wsr.ac.at)
 	export WZRP_CONN=~/.dbi/fiwdevel
 	;;
    algernon.wsr.ac.at)
