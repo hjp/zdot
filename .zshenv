@@ -93,14 +93,6 @@ export MANPATH
 
 
 case "`uname -sr`" in
-HP-UX*09.*)
-	export LANG=${LANG:-american.iso88591}
-	export LC_COLLATE=${LC_COLLATE:-american.iso88591@nofold}
-	;;
-HP-UX*10.*)
-	export LANG=${LANG:-C.iso88591}
-        export TZ=MEZ-1MESZ
-	;;
 Linux*)
 	export LC_COLLATE=POSIX
 	if [ -z "$LANG" ]
@@ -132,9 +124,7 @@ case "$LANG" in
 	export NLS_LANG=american_america.WE8ISO8859P1
 	;;
 *.UTF-8)
-	#export LESSCHARSET=latin1
 	export NLS_LANG=american_america.UTF8
-	# export LC_TIME=de_AT.UTF-8
 	;;
 esac
 

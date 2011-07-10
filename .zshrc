@@ -98,3 +98,28 @@ fi
 autoload -U compinit
 compinit
 
+utf=`locale -a | grep en_US.utf8`
+if [ -n "$utf" ]
+then
+    # this is a bit of a hack -
+    # locale -a advertises the locale as "en_US.utf8",
+    # but the glibc accepts both "en_US.utf8" and
+    # "en_US.UTF-8" and xterm recogizes only the latter.
+    # So we explicitely set the latter, even though that's
+    # not the canonical name and may break some day.
+    # 
+    LANG=en_US.UTF-8
+else 
+    # fall back to latin 1.
+    LANG=en_US.iso88591
+fi
+export LANG
+case "$LANG" in
+*.iso88591)
+	export LESSCHARSET=latin1
+	export NLS_LANG=american_america.WE8ISO8859P1
+	;;
+*.UTF-8)
+	export NLS_LANG=american_america.UTF8
+	;;
+esac
