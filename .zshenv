@@ -207,7 +207,7 @@ case "$FQDN" in
    tanstaafl.wsr.ac.at|pashkan.wsr.ac.at)
 	export LD_LIBRARY_PATH=`preppath -v LD_LIBRARY_PATH /usr/local/lib`
 	;;
-    mri.wsr.ac.at)
+    mri.wsr.ac.at|hrunkner.hjp.at)
         export LD_LIBRARY_PATH=`apppath -v LD_LIBRARY_PATH /usr/lib/jni`
         ;;
    *.wsr.ac.at)
