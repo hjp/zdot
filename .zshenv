@@ -259,15 +259,9 @@ case "$FQDN" in
 esac
 
 case "$FQDN" in
-   tanstaafl.wsr.ac.at)
-	export PERL5LIB=/home/hjp/wrk/wzrp-tng/import/lib:/home/hjp/wrk/wzrp-tng/import/wiiw/lib:/usr/local/www/offline/devel.fiw/lib/perl5
-	PATH=`apppath /usr/local/www/offline/devel.fiw/bin`
-	;;
-   shalmaneser.wsr.ac.at)
-	export  PERL5LIB=/home/hjp/wrk/wzrp-tng/import/lib:/home/hjp/wrk/wzrp-tng/import/wiiw/lib:/usr/local/www/offline/dal.fiw/lib/perl5
-	PATH=`apppath /usr/local/www/offline/dal.fiw/bin`
-	;;
-   pashkan.wsr.ac.at)
+   shalmaneser.wsr.ac.at|pashkan.wsr.ac.at)
+	export  PERL5LIB=`apppath -c -v PERL5LIB ~/lib/perl5 /usr/local/www/offline/$USER.fiw/lib/perl5 /usr/local/www/offline/dal.fiw/lib/perl5`
+	PATH=`apppath -c /usr/local/www/offline/$USER.fiw/bin /usr/local/www/offline/dal.fiw/bin`
 	;;
 esac
 
