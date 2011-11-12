@@ -253,6 +253,9 @@ case "$FQDN" in
    mri.wsr.ac.at)
 	export WZRP_CONN=~/.dbi/fiwdevel
 	;;
+   melbar.wsr.ac.at)
+	export WZRP_CONN=~/.dbi/fiwdevel
+	;;
    algernon.wsr.ac.at)
 	export WZRP_CONN=~/.dbi/fiwssd
 	;;
