@@ -1,3 +1,4 @@
+echo ".zshrc: LANG=$LANG"
 umask 022
 bindkey -v
 
@@ -108,7 +109,18 @@ then
     # So we explicitely set the latter, even though that's
     # not the canonical name and may break some day.
     # 
-    LANG=en_US.UTF-8
+    case "`uname -sr`" in
+    Linux*)
+	LANG=en_US.UTF-8
+	;;
+    HP-UX*)
+	# UTF-8 locale on HP-UX is broken
+	LANG=en_US.iso88591
+	;;
+    *)
+	LANG=en_US.utf8
+	;;
+    esac
 else 
     # fall back to latin 1.
     LANG=en_US.iso88591
