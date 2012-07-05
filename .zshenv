@@ -26,7 +26,7 @@ export PGPPATH=~/.pgp
 export PARINIT=q1
 export PARBODY=_A_a
 export DEBEMAIL=hjp@hjp.at
-export export ACK_COLOR_FILENAME='blue on_white'
+export ACK_COLOR_FILENAME='blue on_white'
 
 
 # don't rely on a sane path at this point:
@@ -297,3 +297,10 @@ then
         export GOARCH=386
     esac
 fi
+
+case "$FQDN" in
+   mri.wsr.ac.at)
+        export GET_PASS_FILES="/home/hjp/wrk/admin/info/pwd_work.gpg /home/hjp/Notes/pw.gpg"
+	;;
+esac
+
