@@ -1,5 +1,5 @@
 #
-# $Id: .zprofile,v 1.20 2008-05-02 09:00:15 hjp Exp $
+# $Id: .zprofile,v 1.21 2012-10-19 11:02:20 hjp Exp $
 #
 # this is sourced for login shells after .zshenv but before .zshrc
 #
@@ -31,3 +31,5 @@ then
 else 
     http_proxy=`findproxy  http://zeno.hjp.at:3128/ http://squid.wsr.ac.at:3128/`
 fi
+
+limit coredumpsize unlimited
