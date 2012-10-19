@@ -1,5 +1,5 @@
 #
-# $Id: .zprofile,v 1.21 2012-10-19 11:02:20 hjp Exp $
+# $Id: .zprofile,v 1.22 2012-10-19 11:03:15 hjp Exp $
 #
 # this is sourced for login shells after .zshenv but before .zshrc
 #
@@ -23,13 +23,6 @@ unset LESSOPEN LESSCLOSE
 if [ -f /etc/X11/rgb.txt ]
 then
     export RGBDEF=/etc/X11/rgb.txt
-fi
-
-if [ "`uname`" = HP-UX ]
-then
-    export http_proxy=http://squid.wsr.ac.at:3128/
-else 
-    http_proxy=`findproxy  http://zeno.hjp.at:3128/ http://squid.wsr.ac.at:3128/`
 fi
 
 limit coredumpsize unlimited
