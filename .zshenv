@@ -191,7 +191,7 @@ esac
 
 case "$FQDN" in
    *.hjp.at)
-	export NNTPSERVER=zeno.hjp.at
+	export NNTPSERVER=news.luga.at
 	;;
    *.wsr.ac.at)
 	export NNTPSERVER=news.wsr.ac.at
