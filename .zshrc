@@ -15,12 +15,12 @@ alias	md=mkdir
 alias	pop=popd
 alias	rd=rmdir
 alias	fixsz='set noglob; eval `resize`;unset noglob'
-alias	ls='ls	-F'
+alias	ls='ls	-Fv'
 if ls -hld > /dev/null 2>/dev/null
 then
-    alias	ll='ls	-lFh'
+    alias	ll='ls	-lFhv'
 else
-    alias	ll='ls	-lF'
+    alias	ll='ls	-lFv'
 fi
 alias	la='ls	-alsF'
 alias	cup='cvs -q update -d -P'
