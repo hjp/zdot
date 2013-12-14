@@ -5,7 +5,6 @@ bindkey -v
 REPORTTIME=1
 
 alias	amke=make
-alias	arm=/bin/rm
 alias	a=alias
 alias	h=history
 alias	j=jobs
