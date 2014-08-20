@@ -50,9 +50,9 @@ then
 
     PATH=`$preppath -c /usr/bin/X11:/usr/games:/usr/contrib/bin`
     PATH=`$preppath -c /bin:/usr/bin`
-    # openoffice 1.1 is in /usr/bin, so we need to prepend 
-    # oo2.0 before it:
-    PATH=`$preppath -c /opt/openoffice.org2.0/program`
+    # Debian's open/libre office is in /usr/bin, so we need to prepend 
+    # the current version before it:
+    PATH=`$preppath -c /opt/libreoffice4.3/program
     PATH=`$preppath -c /usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin:/var/qmail/bin:/usr/local/ssl/bin:/opt/tusc/bin`
     PATH=`$preppath -c /usr/local/sbin:/usr/local/bin`
     PATH=`$preppath -c /usr/local/mysql-5.1.40-hpux11.11-hppa2.0w-64bit/bin`
