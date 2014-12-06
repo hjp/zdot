@@ -310,3 +310,9 @@ case "$FQDN" in
 	;;
 esac
 
+case "$FQDN" in
+   lemy.wsr.ac.at)
+        $(preppath -e -v PYTHONPATH -c ~/etc/wds)
+	;;
+esac
+
