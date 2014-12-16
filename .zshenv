@@ -310,6 +310,11 @@ case "$FQDN" in
 	;;
 esac
 
+if [ -f ~/perl5/perlbrew/etc/bashrc ]
+then
+    source ~/perl5/perlbrew/etc/bashrc
+fi
+
 case "$FQDN" in
    lemy.wsr.ac.at)
         $(preppath -e -v PYTHONPATH -c ~/etc/wds)
