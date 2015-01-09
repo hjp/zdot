@@ -56,6 +56,7 @@ then
     PATH=`$preppath -c /usr/sbin:/sbin:/opt/omni/sbin:/opt/omni/lbin:/var/qmail/bin:/usr/local/ssl/bin:/opt/tusc/bin`
     PATH=`$preppath -c /usr/local/sbin:/usr/local/bin`
     PATH=`$preppath -c /usr/local/mysql-5.1.40-hpux11.11-hppa2.0w-64bit/bin`
+    PATH=`$preppath -c $HOME/scripts`
     PATH=`$preppath -c $HOME/bin/hosts:$HOME/bin`
 
     # then append less important stuff
