@@ -10,10 +10,11 @@ then
 fi
 date
 uptime
+
 [ -n "$SSH_AUTH_SOCK" ] &&
 	cd ~/zdot &&
 	[ -z "`find .ts -mtime -1 2>/dev/null`" ] &&
-	cvs update -d -P &&
+	git pull &&
 	make install &&
 	touch .ts
 cd ~
