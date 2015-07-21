@@ -57,6 +57,10 @@ harden(){
 	cp -p "$1" .harden.$$ && mv .harden.$$ "$1"
 }
 
+moveoutoftheway(){
+	mv "$1" "$1".old
+}
+
 dup(){
 	mv $1 $1.orig && cp -p $1.orig $1
 }
