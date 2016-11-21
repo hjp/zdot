@@ -26,6 +26,7 @@ export PGPPATH=~/.pgp
 export PARINIT=q1
 export PARBODY=_A_a
 export DEBEMAIL=hjp@hjp.at
+export DEB_SIGN_KEYID=12FE285D
 export ACK_COLOR_FILENAME='blue on_white'
 
 
