@@ -8,11 +8,6 @@ then
     for i in \
         /usr/local/jdk1.8.0_112 \
         /usr/local/jre1.6.0_14 \
-	/usr/local/jdk1.5.0_08 \
-	/usr/lib/j2re1.5-sun \
-	/usr/java/j2sdk1.4.2_03 \
-	/usr/local/j2sdk1.3.0 \
-	/usr/local/jdk1.2.2 \
 	/usr/local/java \
 	/usr/lib/java
     do
@@ -24,7 +19,7 @@ then
 	fi
     done
 
-    ALL_PATH=.:/usr/local/java/classes:$ORACLE_HOME/jdbc/lib/classes111.zip:/usr/java1.2/lib/tools.jar:/usr/local/jswdk-1.0.1/lib/servlet.jar:/usr/local/java/lib/Tidy.jar:/usr/local/roxen/2.1/roxen/server/java/classes/servlet.jar
+    ALL_PATH=.:/usr/local/java/classes:$ORACLE_HOME/jdbc/lib/classes111.zip:/usr/local/java/lib/Tidy.jar
     NEW_PATH=""
 
     for i in ${(s/:/)ALL_PATH}
