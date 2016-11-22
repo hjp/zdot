@@ -6,6 +6,7 @@
 if whence apppath > /dev/null
 then
     for i in \
+        /usr/local/jdk1.8.0_112 \
         /usr/local/jre1.6.0_14 \
 	/usr/local/jdk1.5.0_08 \
 	/usr/lib/j2re1.5-sun \
@@ -17,7 +18,7 @@ then
     do
 	if [ -d "$i/bin" ]
 	then
-	    PATH=$(apppath "$i/bin")
+	    PATH=$(preppath "$i/bin")
 	    export JAVA_HOME=$i
 	    break;
 	fi
